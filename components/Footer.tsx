@@ -7,7 +7,8 @@ import {
   Linkedin,
   MapPin,
   Mail,
-  Phone
+  Phone,
+  X as XIcon
 } from 'lucide-react';
 
 export default function Footer() {
@@ -29,7 +30,7 @@ export default function Footer() {
 
   const socialIcons = [
     { icon: Facebook, color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
-    { icon: Twitter, color: "text-blue-400 hover:text-blue-500", bg: "hover:bg-blue-50" },
+    { icon: XIcon, color: "text-black", bg: "bg-white hover:bg-gray-100" },
     { icon: Instagram, color: "text-pink-500 hover:text-pink-600", bg: "hover:bg-pink-50" },
     { icon: Linkedin, color: "text-blue-700 hover:text-blue-800", bg: "hover:bg-blue-50" }
   ];
@@ -54,23 +55,7 @@ export default function Footer() {
             <div className="space-y-6">
               {/* Logo */}
               <div className="flex items-center space-x-2">
-                <div className="relative">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-md flex items-center justify-center">
-                    <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                      <div className="flex flex-col space-y-0.5">
-                        <div className="flex space-x-0.5">
-                          <div className="w-1 h-1 bg-green-500 rounded-full"></div>
-                          <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                        </div>
-                        <div className="flex space-x-0.5">
-                          <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                          <div className="w-1 h-1 bg-green-500 rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-2xl font-bold text-gray-900">StartP</span>
+                <span className="text-2xl font-bold text-gray-900">Chiselbyte Softwares</span>
               </div>
 
               {/* Description */}
@@ -164,9 +149,9 @@ export default function Footer() {
                   return (
                     <button
                       key={index}
-                      className={`w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.color} ${social.bg} transition-all duration-200 hover:border-current`}
+                      className={`w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200 hover:border-current`}
                     >
-                      <IconComponent className="w-5 h-5" />
+                      <IconComponent className={`w-5 h-5 ${social.color}`} />
                     </button>
                   );
                 })}

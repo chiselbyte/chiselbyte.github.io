@@ -4,25 +4,20 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { 
   ChevronDown, 
-  ShoppingCart, 
   Menu, 
-  X,
-  Database,
-  Code,
-  Shield
+  X
 } from 'lucide-react';
 import logoImage from '../assets/images/logo.png';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', hasDropdown: true },
-    { name: 'About', hasDropdown: true },
-    { name: 'Pages', hasDropdown: true },
-    { name: 'Shop', hasDropdown: true },
+    { name: 'Home', hasDropdown: false },
+    { name: 'About', hasDropdown: false },
     { name: 'Blog', hasDropdown: true },
-    { name: 'Contact', hasDropdown: false },
+    { name: 'Contact', hasDropdown: false, href: '/contact' },
   ];
 
   return (
@@ -38,38 +33,24 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
-                <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                  <span className="font-medium">{item.name}</span>
-                  {item.hasDropdown && (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
+                {item.href ? (
+                  <Link href={item.href} className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium">
+                    <span>{item.name}</span>
+                  </Link>
+                ) : (
+                  <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <span className="font-medium">{item.name}</span>
+                    {item.hasDropdown && (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                  </button>
+                )}
               </div>
             ))}
           </nav>
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            {/* Shopping Cart */}
-            <div className="relative">
-              <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  0
-                </span>
-              </button>
-            </div>
-
-            {/* Support */}
-            <button className="hidden md:block text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200">
-              SUPPORT
-            </button>
-
-            {/* Login Button */}
-            <Button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-6 py-2 rounded-md font-medium transition-all duration-200">
-              LOGIN
-            </Button>
-
             {/* Mobile menu button */}
             <button
               className="md:hidden p-2 text-gray-600 hover:text-gray-900"
@@ -85,17 +66,24 @@ export default function Header() {
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  className="flex items-center justify-between text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                >
-                  <span className="font-medium">{item.name}</span>
-                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </button>
+                item.href ? (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center justify-between text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    className="flex items-center justify-between text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                  >
+                    <span className="font-medium">{item.name}</span>
+                    {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
+                  </button>
+                )
               ))}
-              <button className="text-left text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200">
-                SUPPORT
-              </button>
             </nav>
           </div>
         )}

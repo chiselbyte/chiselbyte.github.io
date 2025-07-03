@@ -10,30 +10,42 @@ export default function OurExpertiseSection() {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Decorative background dots */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-16 left-16 w-3 h-3 bg-green-400 rounded-full"></div>
+        <div className="absolute top-32 right-32 w-2 h-2 bg-purple-400 rounded-full"></div>
+        <div className="absolute bottom-24 left-24 w-4 h-4 bg-green-400 rounded-full"></div>
+        <div className="absolute bottom-16 right-16 w-3 h-3 bg-orange-400 rounded-full"></div>
+      </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="w-8 h-1 bg-green-500 rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our expertise - <span className="text-blue-600">Precision focused</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-4">
+          <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-2">
             We don't do everything—and that's by design.
           </p>
-          <p className="text-md text-gray-500 max-w-2xl mx-auto">
+          <p className="text-md text-gray-500 leading-relaxed max-w-2xl mx-auto">
             At ChiselByte, we specialize in a carefully curated stack of technologies and platforms that we’ve mastered through experience and dedication. Whether it’s cloud-native microservices, API integrations, or event-driven architecture, we go deep—not wide.
           </p>
         </div>
-        {/* Expertise List */}
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Our core areas of expertise:</h3>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-disc list-inside mx-auto max-w-xl">
-            {expertiseAreas.map((area, idx) => (
-              <li key={idx} className="text-gray-700 text-lg pl-2">
-                {area}
-              </li>
-            ))}
-          </ul>
+        {/* Expertise Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          {expertiseAreas.map((area, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-100 flex items-center"
+            >
+              <div className="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
+              <span className="text-gray-800 text-lg font-semibold">{area}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
