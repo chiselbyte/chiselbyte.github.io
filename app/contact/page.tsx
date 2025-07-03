@@ -10,7 +10,7 @@ export default function ContactPage() {
       <Header />
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
-          <div className="hidden md:block h-full w-full">
+          <div className="mb-8 md:mb-0 block h-full w-full">
             <img
               src="https://img.freepik.com/free-vector/contact-us-concept-landing-page_52683-12860.jpg"
               alt="Contact"
