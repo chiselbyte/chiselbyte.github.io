@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="bg-white relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden sm:block">
         <div className="absolute top-20 right-20 text-green-400 text-2xl font-bold">×</div>
         <div className="absolute top-40 left-20 w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-green-400"></div>
         <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full"></div>
@@ -161,12 +161,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 py-8">
+        <div className="border-t border-gray-200 py-6">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
-            <div className="text-gray-600 text-center">
+            <div className="text-gray-600 text-center text-sm">
               <p>Copyright © 2025 ChiselByte Softwares</p>
             </div>
-            
+
           </div>
         </div>
       </div>
