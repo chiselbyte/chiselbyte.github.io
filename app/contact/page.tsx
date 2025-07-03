@@ -23,11 +23,6 @@ export default function ContactPage() {
               We'd love to hear from you! Fill out the form below or email us at
               <a href="mailto:contact@chiselbyte.com" className="text-green-600 font-medium"> contact@chiselbyte.com</a>.
             </p>
-            <div className="text-gray-700 space-y-2 mb-8">
-              <p className="text-center md:text-left"><strong>Address:</strong> 123 Software St, Tech City</p>
-              <p className="text-center md:text-left"><strong>Email:</strong> contact@chiselbyte.com</p>
-              <p className="text-center md:text-left"><strong>Phone:</strong> +1 (123) 456-7890</p>
-            </div>
             <form className="space-y-6">
               <div>
                 <label className="block text-gray-700 font-medium mb-1">Name</label>
