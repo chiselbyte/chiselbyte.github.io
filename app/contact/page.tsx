@@ -12,7 +12,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
           <div className="hidden md:block h-full w-full">
             <img
-              src="https://source.unsplash.com/800x800/?office"
+              src="https://img.freepik.com/free-photo/flat-lay-office-desk-assortment_23-2149028472.jpg"
               alt="Contact"
               className="w-full h-full object-cover rounded-2xl shadow"
             />

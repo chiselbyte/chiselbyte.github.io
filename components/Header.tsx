@@ -40,11 +40,11 @@ export default function Header() {
               About
             </Link>
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors font-medium cursor-pointer">
                 <span>Blog</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-40">
+              <div className="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
                 {blogItems.map((item) => (
                   <Link
                     key={item.name}
