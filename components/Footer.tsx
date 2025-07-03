@@ -179,7 +179,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 py-8">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
             <div className="text-gray-600 text-center">
-              <p>Copyright © 2025 StartP. All rights reserved by <span className="text-gray-900 font-medium">EnvyTheme</span></p>
+              <p>Copyright © 2025 ChiselByte Softwares</p>
             </div>
             
           </div>

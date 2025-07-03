@@ -11,6 +11,7 @@ import {
   Code,
   Shield
 } from 'lucide-react';
+import logoImage from '../assets/images/logo.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,25 +31,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <div className="relative">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-md flex items-center justify-center">
-                  <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                    <div className="flex flex-col space-y-0.5">
-                      <div className="flex space-x-0.5">
-                        <div className="w-1 h-1 bg-green-500 rounded-full"></div>
-                        <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                      </div>
-                      <div className="flex space-x-0.5">
-                        <div className="w-1 h-1 bg-purple-500 rounded-full"></div>
-                        <div className="w-1 h-1 bg-green-500 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <span className="text-2xl font-bold text-gray-900">StartP</span>
-            </div>
+            <img src={logoImage.src} alt="Your Company Logo" className="h-20" />
           </div>
 
           {/* Desktop Navigation */}

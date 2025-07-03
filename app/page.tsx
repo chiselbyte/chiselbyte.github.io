@@ -12,12 +12,15 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ReadyToTalkSection from '@/components/ReadyToTalkSection';
 import BlogNewsSection from '@/components/BlogNewsSection';
 import Footer from '@/components/Footer';
+import OurExpertiseSection from '@/components/OurExpertiseSection';
+import AboutUsSection from '@/components/AboutUsSection';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <HeroSection />
+      <OurExpertiseSection />
       <FeaturesSection />
       <CloudHostingSection />
       <DesignDevelopmentSection />
@@ -29,6 +32,7 @@ export default function Home() {
       <TestimonialsSection />
       <ReadyToTalkSection />
       <BlogNewsSection />
+      <AboutUsSection />
       <Footer />
     </main>
   );

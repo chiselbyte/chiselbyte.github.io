@@ -13,46 +13,43 @@ export default function OurFeaturesSection() {
   const features = [
     {
       icon: Settings,
-      title: "Incredible Infrastructure",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
+      title: "Custom Application Development",
+      description: "From ideation to production, we build robust, scalable software tailored to your business.",
       bgColor: "bg-green-100",
       iconColor: "text-green-600"
     },
     {
       icon: Mail,
-      title: "Email Notifications",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      bgColor: "bg-green-100",
+      title: "Enterprise Integration",
+      description: "Simplify complexity. We connect your systems through reliable, secure, and maintainable integrations.",
       iconColor: "text-green-600"
     },
     {
       icon: Grid3X3,
-      title: "Simple Dashboard",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      bgColor: "bg-purple-100",
+      title: "Microservices & Cloud Migration",
+      description: "Break monoliths, embrace scale. We design systems for speed, resilience, and continuous deployment.",
       iconColor: "text-purple-600"
     },
     {
       icon: Info,
-      title: "Information Retrieval",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      bgColor: "bg-purple-100",
+      title: "Secure API Development",
+      description: "From design to deployment, we create APIs that are clean, well-documented, and secured by design.",
       iconColor: "text-purple-600"
     },
-    {
-      icon: Package,
-      title: "Drag & Drop Functionality",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      bgColor: "bg-orange-100",
-      iconColor: "text-orange-600"
-    },
-    {
-      icon: Bell,
-      title: "Deadline Reminders",
-      description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
-      bgColor: "bg-orange-100",
-      iconColor: "text-orange-600"
-    }
+    // {
+    //   icon: Package,
+    //   title: "Drag & Drop Functionality",
+    //   description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
+    //   bgColor: "bg-orange-100",
+    //   iconColor: "text-orange-600"
+    // },
+    // {
+    //   icon: Bell,
+    //   title: "Deadline Reminders",
+    //   description: "Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
+    //   bgColor: "bg-orange-100",
+    //   iconColor: "text-orange-600"
+    // }
   ];
 
   return (
@@ -76,12 +73,11 @@ export default function OurFeaturesSection() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Features
+            Services - What we craft
           </h2>
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-            tempor incididunt ut labore et dolore magna aliqua.
+            Every service we offer is born out of expertise and refined through real-world experience:
           </p>
         </div>
 

@@ -11,15 +11,15 @@ export default function HeroSection() {
         <div className="absolute top-20 left-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
         <div className="absolute top-32 right-40 w-4 h-4 border-2 border-green-400 rotate-45"></div>
         <div className="absolute bottom-40 left-40 w-5 h-5 border-2 border-green-400 rotate-45"></div>
-        
+
         {/* Circles */}
         <div className="absolute top-40 left-10 w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full opacity-80"></div>
         <div className="absolute bottom-20 right-20 w-12 h-12 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full opacity-80"></div>
-        
+
         {/* X shapes */}
         <div className="absolute top-24 right-20 text-green-400 text-2xl font-bold">×</div>
         <div className="absolute bottom-32 left-20 text-green-400 text-xl font-bold">×</div>
-        
+
         {/* Additional decorative elements */}
         <div className="absolute top-60 right-60 w-8 h-8 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-60"></div>
         <div className="absolute bottom-60 right-80 w-6 h-6 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-full opacity-60"></div>
@@ -31,17 +31,11 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Secure IT Solutions
-                <br />
-                <span className="text-blue-900">for a more secure</span>
-                <br />
-                <span className="text-blue-900">environment</span>
+                Precision in Every Byte
               </h1>
-              
+
               <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis 
-                ipsum suspendisse ultrices gravida
+                At ChiselByte, we’re not just building software—we’re crafting solutions. Like a master artisan chisels stone with precision and care, we write code with intention, clarity, and pride. We believe that technology, when crafted well, becomes invisible—it just works.From our first line of code to the final deployment, we’re obsessed with delivering clean, scalable, and high-quality software that not only works but lasts. Because to us, software is more than logic—it’s legacy.
               </p>
             </div>
 
@@ -63,14 +57,14 @@ export default function HeroSection() {
                   <div className="relative">
                     {/* Pink desk base */}
                     <div className="w-80 h-60 bg-gradient-to-br from-pink-300 to-pink-400 rounded-lg shadow-2xl transform skew-y-3 mx-auto"></div>
-                    
+
                     {/* Person sitting */}
                     <div className="absolute top-4 left-20 z-20">
                       {/* Chair */}
                       <div className="w-16 h-20 bg-gray-800 rounded-lg relative">
                         <div className="absolute -top-2 left-2 w-12 h-12 bg-gray-700 rounded-full"></div>
                       </div>
-                      
+
                       {/* Person */}
                       <div className="absolute -top-8 left-2 z-10">
                         {/* Head */}
@@ -148,11 +142,11 @@ export default function HeroSection() {
                     <div className="absolute -top-8 -left-8 z-5">
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-300 to-purple-400 rounded-lg transform rotate-12 opacity-80"></div>
                     </div>
-                    
+
                     <div className="absolute -top-4 -right-4 z-5">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-300 to-blue-400 rounded-lg transform -rotate-12 opacity-80"></div>
                     </div>
-                    
+
                     <div className="absolute bottom-0 -left-6 z-5">
                       <div className="w-10 h-10 bg-gradient-to-br from-green-300 to-green-400 rounded-lg transform rotate-45 opacity-80"></div>
                     </div>
