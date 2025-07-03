@@ -34,7 +34,7 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="#"
+              href="/about"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
               About
@@ -80,7 +80,7 @@ export default function Header() {
               <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium">
                 Home
               </Link>
-              <Link href="#" className="text-gray-600 hover:text-gray-900 font-medium">
+              <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium">
                 About
               </Link>
               <button
