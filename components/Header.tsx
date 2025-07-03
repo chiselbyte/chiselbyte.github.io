@@ -26,7 +26,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
             <Link
               href="/"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
@@ -44,7 +44,7 @@ export default function Header() {
                 <span>Blog</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
+              <div className="absolute left-0 top-full w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
                 {blogItems.map((item) => (
                   <Link
                     key={item.name}
