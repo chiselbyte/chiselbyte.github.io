@@ -20,7 +20,7 @@ export default function PricingPlansSection() {
         { text: "Monthly Reports and Analytics", disabled: true }
       ],
       buttonText: "SELECT PLAN",
-      buttonStyle: "bg-green-500 hover:bg-green-600 text-white",
+        buttonStyle: "bg-green-500 hover:bg-blue-600 text-white",
       cardStyle: "bg-white border border-gray-200",
       popular: false
     },
@@ -59,7 +59,7 @@ export default function PricingPlansSection() {
         "Monthly Reports and Analytics"
       ],
       buttonText: "SELECT PLAN",
-      buttonStyle: "bg-green-500 hover:bg-green-600 text-white",
+        buttonStyle: "bg-green-500 hover:bg-blue-600 text-white",
       cardStyle: "bg-white border border-gray-200",
       popular: false
     }

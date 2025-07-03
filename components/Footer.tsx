@@ -77,7 +77,7 @@ export default function Footer() {
                   <a
                     key={index}
                     href={link.href}
-                    className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -95,8 +95,8 @@ export default function Footer() {
                     href={link.href}
                     className={`block transition-colors duration-200 ${
                       link.highlight 
-                        ? 'text-green-600 hover:text-green-700 font-medium' 
-                        : 'text-gray-600 hover:text-green-600'
+                        ? 'text-blue-600 hover:text-blue-700 font-medium'
+                        : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
                     {link.name}
@@ -124,7 +124,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <a 
                     href="mailto:startp@gmail.com" 
-                    className="text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     Email: startp@gmail.com
                   </a>
@@ -135,7 +135,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <a 
                     href="tel:+13219847541" 
-                    className="text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     Phone: + (321) 984 754
                   </a>
