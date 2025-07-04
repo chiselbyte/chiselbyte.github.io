@@ -91,7 +91,7 @@ export default function BlogNewsSection() {
               <div className="p-8">
                 <div className="space-y-4">
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-green-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors duration-300">
                     {post.title}
                   </h3>
 
@@ -110,7 +110,7 @@ export default function BlogNewsSection() {
 
                   {/* Read More Link */}
                   <div className="pt-4">
-                    <button className="flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium transition-colors duration-200 group/link">
+                    <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 group/link">
                       <span>Read More</span>
                       <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
                     </button>
@@ -123,7 +123,7 @@ export default function BlogNewsSection() {
 
         {/* View All Posts Button */}
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             VIEW ALL POSTS
           </button>
         </div>

@@ -25,7 +25,7 @@ export default function Footer() {
     { name: "Privacy Policy", href: "#" },
     { name: "Terms & Conditions", href: "#" },
     { name: "Team", href: "#" },
-    { name: "Contact Us", href: "#", highlight: true }
+    { name: "Contact Us", href: "#" }
   ];
 
   const socialIcons = [
@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="bg-white relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden sm:block">
         <div className="absolute top-20 right-20 text-green-400 text-2xl font-bold">×</div>
         <div className="absolute top-40 left-20 w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-green-400"></div>
         <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full"></div>
@@ -77,7 +77,7 @@ export default function Footer() {
                   <a
                     key={index}
                     href={link.href}
-                    className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -93,11 +93,7 @@ export default function Footer() {
                   <a
                     key={index}
                     href={link.href}
-                    className={`block transition-colors duration-200 ${
-                      link.highlight 
-                        ? 'text-green-600 hover:text-green-700 font-medium' 
-                        : 'text-gray-600 hover:text-green-600'
-                    }`}
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -124,7 +120,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <a 
                     href="mailto:startp@gmail.com" 
-                    className="text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     Email: startp@gmail.com
                   </a>
@@ -135,7 +131,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <a 
                     href="tel:+13219847541" 
-                    className="text-gray-600 hover:text-green-600 transition-colors duration-200"
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     Phone: + (321) 984 754
                   </a>
@@ -161,12 +157,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 py-8">
+        <div className="border-t border-gray-200 py-6">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
-            <div className="text-gray-600 text-center">
+            <div className="text-gray-600 text-center text-sm">
               <p>Copyright © 2025 ChiselByte Softwares</p>
             </div>
-            
+
           </div>
         </div>
       </div>

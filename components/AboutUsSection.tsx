@@ -42,9 +42,9 @@ export default function AboutUsSection() {
             Whether you're modernizing a legacy system or starting a bold new
             idea, let's connect.
           </p>
-          <a
-            href="mailto:contact@chiselbyte.com"
-            className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow hover:bg-green-700 transition-colors duration-200"
+            <a
+              href="mailto:contact@chiselbyte.com"
+              className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow hover:bg-blue-700 transition-colors duration-200"
           >
             Write to us @ contact@chiselbyte.com
           </a>
