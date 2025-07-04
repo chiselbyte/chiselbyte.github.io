@@ -25,7 +25,7 @@ export default function Footer() {
     { name: "Privacy Policy", href: "#" },
     { name: "Terms & Conditions", href: "#" },
     { name: "Team", href: "#" },
-    { name: "Contact Us", href: "#", highlight: true }
+    { name: "Contact Us", href: "#" }
   ];
 
   const socialIcons = [
@@ -93,11 +93,7 @@ export default function Footer() {
                   <a
                     key={index}
                     href={link.href}
-                    className={`block transition-colors duration-200 ${
-                      link.highlight 
-                        ? 'text-blue-600 hover:text-blue-700 font-medium'
-                        : 'text-gray-600 hover:text-blue-600'
-                    }`}
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
