@@ -1,36 +1,24 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
-import CloudHostingSection from '@/components/CloudHostingSection';
+import DigitalMarketingSection from '@/components/DigitalMarketingSection';
 import DesignDevelopmentSection from '@/components/DesignDevelopmentSection';
-import OurFeaturesSection from '@/components/OurFeaturesSection';
-import StatisticsContactSection from '@/components/StatisticsContactSection';
 import OurRecentWorksSection from '@/components/OurRecentWorksSection';
-import PricingPlansSection from '@/components/PricingPlansSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ReadyToTalkSection from '@/components/ReadyToTalkSection';
 import BlogNewsSection from '@/components/BlogNewsSection';
 import Footer from '@/components/Footer';
-import OurExpertiseSection from '@/components/OurExpertiseSection';
-import AboutUsSection from '@/components/AboutUsSection';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <HeroSection />
-      <OurExpertiseSection />
-      <FeaturesSection />
-      <CloudHostingSection />
+      <DigitalMarketingSection />
       <DesignDevelopmentSection />
-      <OurFeaturesSection />
-      <StatisticsContactSection />
+      <FeaturesSection />
       <OurRecentWorksSection />
-      <PricingPlansSection />
-      <TestimonialsSection />
-      <ReadyToTalkSection />
       <BlogNewsSection />
-      <AboutUsSection />
+      <ReadyToTalkSection />
       <Footer />
     </main>
   );

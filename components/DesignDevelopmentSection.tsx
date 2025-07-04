@@ -12,6 +12,31 @@ import {
 export default function DesignDevelopmentSection() {
   const services = [
     {
+      icon: Monitor,
+      title: "Java & Quarkus Development",
+      iconColor: "text-green-600"
+    },
+    {
+      icon: Monitor,
+      title: "Apache Camel Integrations",
+      iconColor: "text-green-600"
+    },
+    {
+      icon: Monitor,
+      title: "Event-driven Solutions with Kafka",
+      iconColor: "text-green-600"
+    },
+    {
+      icon: Monitor,
+      title: "Cloud-native Deployments",
+      iconColor: "text-green-600"
+    },
+    {
+      icon: Monitor,
+      title: "Secure API Design & Avro-based Serialization",
+      iconColor: "text-green-600"
+    },
+    {
       icon: Smartphone,
       title: "Responsive design",
       iconColor: "text-green-600"
@@ -23,23 +48,8 @@ export default function DesignDevelopmentSection() {
     },
     {
       icon: Smartphone,
-      title: "Android apps development",
+      title: "Mobile apps development",
       iconColor: "text-green-600"
-    },
-    {
-      icon: Code,
-      title: "Laravel web development",
-      iconColor: "text-blue-600"
-    },
-    {
-      icon: Monitor,
-      title: "iOS apps development",
-      iconColor: "text-green-600"
-    },
-    {
-      icon: Palette,
-      title: "UX/UI design",
-      iconColor: "text-purple-600"
     },
     {
       icon: ShoppingCart,

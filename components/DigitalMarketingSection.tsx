@@ -78,7 +78,7 @@ export default function CloudHostingSection() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Cloud Hosting Services
+                Digital Marketing Services
               </h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">

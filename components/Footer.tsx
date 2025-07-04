@@ -110,8 +110,7 @@ export default function Footer() {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
                   <div className="text-gray-600">
-                    <p>27 Division St, New York,</p>
-                    <p>NY 10002, USA</p>
+                    <p>Pune, India</p>
                   </div>
                 </div>
 
@@ -119,10 +118,10 @@ export default function Footer() {
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <a 
-                    href="mailto:startp@gmail.com" 
+                    href="" 
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
-                    Email: startp@gmail.com
+                    contact@chiselbyte.com
                   </a>
                 </div>
 
@@ -133,7 +132,7 @@ export default function Footer() {
                     href="tel:+13219847541" 
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
-                    Phone: + (321) 984 754
+                    +91----------
                   </a>
                 </div>
               </div>
