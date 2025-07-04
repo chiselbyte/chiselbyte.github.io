@@ -29,18 +29,18 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               About
             </Link>
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors font-medium cursor-pointer">
+              <button className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors font-medium cursor-pointer">
                 <span>Blog</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -58,7 +58,7 @@ export default function Header() {
             </div>
             <Link
               href="/contact"
-              className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
               Contact
             </Link>
@@ -66,7 +66,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="md:hidden p-2 text-gray-600 hover:text-blue-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -77,15 +77,15 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium">
+              <Link href="/" className="text-gray-600 hover:text-blue-600 font-medium">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium">
+              <Link href="/about" className="text-gray-600 hover:text-blue-600 font-medium">
                 About
               </Link>
               <button
                 onClick={() => setIsBlogMobileOpen(!isBlogMobileOpen)}
-                className="flex items-center justify-between text-gray-600 hover:text-gray-900 font-medium"
+                className="flex items-center justify-between text-gray-600 hover:text-blue-600 font-medium"
               >
                 <span>Blog</span>
                 <ChevronDown
@@ -98,14 +98,14 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-gray-600 hover:text-gray-900 text-sm"
+                      className="text-gray-600 hover:text-blue-600 text-sm"
                     >
                       {item.name}
                     </Link>
                   ))}
                 </div>
               )}
-              <Link href="/contact" className="text-gray-600 hover:text-gray-900 font-medium">
+              <Link href="/contact" className="text-gray-600 hover:text-blue-600 font-medium">
                 Contact
               </Link>
             </nav>
