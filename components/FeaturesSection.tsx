@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Settings, Database, Shield } from 'lucide-react';
+import { Monitor, Share2, Cloud, Shield } from 'lucide-react';
 
 export default function FeaturesSection() {
   const features = [
@@ -12,14 +12,14 @@ export default function FeaturesSection() {
       iconColor: "text-green-600"
     },
     {
-      icon: Settings,
+      icon: Share2,
       title: "Enterprise Integration",
       description: "Simplify complexity. We connect your systems through reliable, secure, and maintainable integrations.",
       bgColor: "bg-pink-100",
       iconColor: "text-pink-600"
     },
     {
-      icon: Database,
+      icon: Cloud,
       title: "Microservices & Cloud Migration",
       description: "Break monoliths, embrace scale. We design systems for speed, resilience, and continuous deployment.",
       bgColor: "bg-purple-100",

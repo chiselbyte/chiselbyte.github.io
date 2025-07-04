@@ -1,10 +1,11 @@
 "use client";
 
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export default function ReadyToTalkSection() {
   return (
-    <section className="bg-gradient-to-br from-green-400 to-green-500 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-blue-500 via-green-400 to-green-500 relative overflow-hidden">
       {/* Main CTA Section */}
       <div className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -18,10 +19,11 @@ export default function ReadyToTalkSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                CONTACT US
-              </Button>
-              
+              <Link href="/contact" passHref legacyBehavior>
+                <Button asChild className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                  <span>CONTACT US</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

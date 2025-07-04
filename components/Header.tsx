@@ -22,7 +22,9 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logoImage.src} alt="Chiselbyte" className="h-20" />
+            <Link href="/">
+              <img src={logoImage.src} alt="Chiselbyte" className="h-20 cursor-pointer" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,7 +39,7 @@ export default function Header() {
               href="/about"
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
-              About
+              About Us
             </Link>
             <div className="relative group">
               <button className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors font-medium cursor-pointer">
@@ -60,7 +62,7 @@ export default function Header() {
               href="/contact"
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
             >
-              Contact
+              Contact Us
             </Link>
           </nav>
 
@@ -81,7 +83,7 @@ export default function Header() {
                 Home
               </Link>
               <Link href="/about" className="text-gray-600 hover:text-blue-600 font-medium">
-                About
+                About Us
               </Link>
               <button
                 onClick={() => setIsBlogMobileOpen(!isBlogMobileOpen)}
@@ -106,7 +108,7 @@ export default function Header() {
                 </div>
               )}
               <Link href="/contact" className="text-gray-600 hover:text-blue-600 font-medium">
-                Contact
+                Contact Us
               </Link>
             </nav>
           </div>

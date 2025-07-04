@@ -16,8 +16,6 @@ export default function Footer() {
     { name: "About Us", href: "#" },
     { name: "Services", href: "#" },
     { name: "Features", href: "#" },
-    { name: "Our Pricing", href: "#" },
-    { name: "Latest News", href: "#" }
   ];
 
   const supportLinks = [
@@ -60,9 +58,7 @@ export default function Footer() {
 
               {/* Description */}
               <p className="text-gray-600 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                nostrud exercitation ullamco laboris nisi.
+                Chiselbyte Softwares delivers innovative digital solutions, from branding and web development to analytics and marketing. Our team is dedicated to helping businesses grow and succeed in the digital era.
               </p>
 
               {/* Decorative Element */}
