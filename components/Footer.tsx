@@ -47,8 +47,8 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-10 sm:py-14 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             {/* Company Info */}
             <div className="space-y-6">
               {/* Logo */}
@@ -152,9 +152,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
-            <div className="text-gray-600 text-center text-sm">
+        <div className="border-t border-gray-200 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-2 sm:space-y-4 md:space-y-0">
+            <div className="text-gray-600 text-center text-xs sm:text-sm">
               <p>Copyright © 2025 ChiselByte Softwares</p>
             </div>
 
