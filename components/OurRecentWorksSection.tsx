@@ -26,7 +26,7 @@ export default function OurRecentWorksSection() {
     },
     {
       id: 3,
-      title: "Diatetian App",
+      title: "Dietitian App",
       category: "Health & Wellness",
       image: sharedImage,
       bgColor: "bg-blue-400",

@@ -19,8 +19,7 @@ export default function ReadyToTalkSection() {
               <br />
               <br />
               Whether you're modernizing a legacy system or starting a bold new idea, let's connect.
-              <br />
-              Write to us @ contact@chiselbyte.com
+              
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
@@ -33,5 +32,4 @@ export default function ReadyToTalkSection() {
           </div>
         </div>
       </div>
-    </section>
-  );}
+    </section>  );}
