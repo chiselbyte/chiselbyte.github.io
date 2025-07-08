@@ -26,21 +26,21 @@ export default function OurRecentWorksSection() {
     },
     {
       id: 3,
-      title: "Magazine Mockup Design",
-      category: "Print Design",
+      title: "Diatetian App",
+      category: "Health & Wellness",
       image: sharedImage,
       bgColor: "bg-blue-400",
-      description: "Professional magazine layout and mockup presentation.",
-      type: "print"
+      description: "A nutrition focused application assisting users with personalized diet plans.",
+      type: "health"
     },
     {
       id: 4,
-      title: "Shopping Bag Design",
-      category: "Package Design",
+      title: "Social Media Management",
+      category: "Marketing",
       image: sharedImage,
       bgColor: "bg-pink-200",
-      description: "Eco-friendly shopping bag design with modern branding elements.",
-      type: "packaging"
+      description: "Tools and strategies for handling multi-platform social media campaigns.",
+      type: "marketing"
     }
   ];
 

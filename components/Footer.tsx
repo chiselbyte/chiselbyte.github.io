@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="py-10 sm:py-14 md:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             {/* Company Info */}
-            <div className="space-y-6">
+            <div className="space-y-6 lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center space-x-2">
                 <span className="text-2xl font-bold text-gray-900">Chiselbyte Softwares</span>
@@ -57,23 +57,6 @@ export default function Footer() {
               {/* Decorative Element */}
               <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full opacity-80"></div>
             </div>
-
-            {/* Company Links */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-gray-900">Company</h3>
-              <nav className="space-y-4">
-                {companyLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
 
             {/* Address & Contact */}
             <div className="space-y-6">
@@ -130,6 +113,22 @@ export default function Footer() {
                 })}
               </div>
             </div>
+
+            {/* Company Links */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-gray-900">Company</h3>
+              <nav className="space-y-4">
+                {companyLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+            </div>
           </div>
         </div>
 
@@ -143,5 +142,4 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );}
+    </footer>  );}
