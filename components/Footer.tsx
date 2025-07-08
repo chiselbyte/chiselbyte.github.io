@@ -41,16 +41,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="py-10 sm:py-14 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             {/* Company Info */}
-            <div className="space-y-6 lg:col-span-2">
+            <div className="space-y-6 sm:col-span-2 lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center space-x-2">
                 <span className="text-2xl font-bold text-gray-900">Chiselbyte Softwares</span>
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed lg:max-w-md">
                 Chiselbyte Softwares delivers innovative digital solutions, from branding and web development to analytics and marketing. Our team is dedicated to helping businesses grow and succeed in the digital era.
               </p>
 
