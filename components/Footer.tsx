@@ -20,8 +20,8 @@ export default function Footer() {
   ];
 
   const socialIcons = [
-    { icon: Facebook, href: "#", color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
-    { icon: XIcon, href: "#", color: "text-black", bg: "bg-white hover:bg-gray-100" },
+    { icon: Facebook, href: undefined, color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
+    { icon: XIcon, href: undefined, color: "text-black", bg: "bg-white hover:bg-gray-100" },
     { icon: Instagram, href: "https://www.instagram.com/chiselbyte/", color: "text-pink-500 hover:text-pink-600", bg: "hover:bg-pink-50" },
     { icon: Linkedin, href: "https://in.linkedin.com/in/chisel-byte-b55817367", color: "text-blue-700 hover:text-blue-800", bg: "hover:bg-blue-50" }
   ];
@@ -58,10 +58,26 @@ export default function Footer() {
               <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full opacity-80"></div>
             </div>
 
+            {/* Company Links */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-gray-900">Company</h3>
+              <nav className="space-y-4">
+                {companyLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
             {/* Address & Contact */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-gray-900">Address</h3>
-              
+
               <div className="space-y-4">
                 {/* Address */}
                 <div className="flex items-start space-x-3">
@@ -74,8 +90,8 @@ export default function Footer() {
                 {/* Email */}
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                  <a 
-                    href="" 
+                  <a
+                    href=""
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     contact@chiselbyte.com
@@ -99,35 +115,27 @@ export default function Footer() {
               <div className="flex space-x-3">
                 {socialIcons.map((social, index) => {
                   const IconComponent = social.icon;
+                  const commonClasses = `w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200 hover:border-current`;
+                  if (social.href) {
+                    return (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={commonClasses}
+                      >
+                        <IconComponent className={`w-5 h-5 ${social.color}`} />
+                      </a>
+                    );
+                  }
                   return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200 hover:border-current`}
-                    >
+                    <button key={index} className={commonClasses} type="button">
                       <IconComponent className={`w-5 h-5 ${social.color}`} />
-                    </a>
+                    </button>
                   );
                 })}
               </div>
-            </div>
-
-            {/* Company Links */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-gray-900">Company</h3>
-              <nav className="space-y-4">
-                {companyLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
             </div>
           </div>
         </div>
@@ -141,5 +149,4 @@ export default function Footer() {
 
           </div>
         </div>
-      </div>
-    </footer>  );}
+      </div>    </footer>  );}
