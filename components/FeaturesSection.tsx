@@ -35,7 +35,7 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-8 sm:py-12 md:py-20 bg-white">
+    <section id="services" className="py-8 sm:py-12 md:py-20 bg-white">
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>
         <div className="absolute top-40 right-40 w-2 h-2 bg-purple-400 rounded-full"></div>

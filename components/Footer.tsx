@@ -1,9 +1,9 @@
 "use client";
 
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
   Linkedin,
   MapPin,
   Mail,
@@ -13,24 +13,17 @@ import {
 
 export default function Footer() {
   const companyLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Features", href: "#" },
-  ];
-
-  const supportLinks = [
-    { name: "FAQ's", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Team", href: "#" },
-    { name: "Contact Us", href: "#" }
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/#services" },
+    { name: "Development", href: "/#development" },
+    { name: "Contact Us", href: "/contact" }
   ];
 
   const socialIcons = [
-    { icon: Facebook, color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
-    { icon: XIcon, color: "text-black", bg: "bg-white hover:bg-gray-100" },
-    { icon: Instagram, color: "text-pink-500 hover:text-pink-600", bg: "hover:bg-pink-50" },
-    { icon: Linkedin, color: "text-blue-700 hover:text-blue-800", bg: "hover:bg-blue-50" }
+    { icon: Facebook, href: "#", color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
+    { icon: XIcon, href: "#", color: "text-black", bg: "bg-white hover:bg-gray-100" },
+    { icon: Instagram, href: "https://www.instagram.com/chiselbyte/", color: "text-pink-500 hover:text-pink-600", bg: "hover:bg-pink-50" },
+    { icon: Linkedin, href: "https://in.linkedin.com/in/chisel-byte-b55817367", color: "text-blue-700 hover:text-blue-800", bg: "hover:bg-blue-50" }
   ];
 
   return (
@@ -48,7 +41,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="py-10 sm:py-14 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             {/* Company Info */}
             <div className="space-y-6">
               {/* Logo */}
@@ -81,21 +74,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Support Links */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-gray-900">Support</h3>
-              <nav className="space-y-4">
-                {supportLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
 
             {/* Address & Contact */}
             <div className="space-y-6">
@@ -121,16 +99,17 @@ export default function Footer() {
                   </a>
                 </div>
 
-                {/* Phone */}
+                {/** Phone
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                  <a 
-                    href="tel:+13219847541" 
+                  <a
+                    href="tel:+13219847541"
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     +91----------
                   </a>
                 </div>
+                */}
               </div>
 
               {/* Social Icons */}
@@ -138,12 +117,15 @@ export default function Footer() {
                 {socialIcons.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
-                    <button
+                    <a
                       key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200 hover:border-current`}
                     >
                       <IconComponent className={`w-5 h-5 ${social.color}`} />
-                    </button>
+                    </a>
                   );
                 })}
               </div>
@@ -162,5 +144,4 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
+  );}

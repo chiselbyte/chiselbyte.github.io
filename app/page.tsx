@@ -5,7 +5,6 @@ import DigitalMarketingSection from '@/components/DigitalMarketingSection';
 import DesignDevelopmentSection from '@/components/DesignDevelopmentSection';
 import OurRecentWorksSection from '@/components/OurRecentWorksSection';
 import ReadyToTalkSection from '@/components/ReadyToTalkSection';
-import BlogNewsSection from '@/components/BlogNewsSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -17,9 +16,8 @@ export default function Home() {
       <DesignDevelopmentSection />
       <FeaturesSection />
       <OurRecentWorksSection />
-      <BlogNewsSection />
+      {/** <BlogNewsSection /> */}
       <ReadyToTalkSection />
       <Footer />
     </main>
-  );
-}
+  );}

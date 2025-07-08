@@ -60,7 +60,7 @@ export default function DesignDevelopmentSection() {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="development" className="py-20 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>
