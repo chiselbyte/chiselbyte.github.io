@@ -14,8 +14,9 @@ import {
 export default function Footer() {
   const companyLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Services", href: "/#services" },
     { name: "Development", href: "/#development" },
+    { name: "Digital Marketing", href: "/#digital-marketing" },
+    { name: "Services", href: "/#services" },
     { name: "Contact Us", href: "/contact" }
   ];
 

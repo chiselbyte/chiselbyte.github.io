@@ -57,7 +57,7 @@ export default function CloudHostingSection() {
   ];
 
   return (
-    <section className="py-8 sm:py-12 md:py-20 bg-gray-50 relative overflow-hidden">
+    <section id="digital-marketing" className="py-8 sm:py-12 md:py-20 bg-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>

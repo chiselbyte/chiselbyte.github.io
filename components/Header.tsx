@@ -8,13 +8,46 @@ import Link from "next/link";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBlogMobileOpen, setIsBlogMobileOpen] = useState(false);
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({});
 
   const blogItems = [
-    { name: "Java", href: "/blog/java" },
-    { name: "Spring Boot", href: "/blog/springboot" },
-    { name: "Python", href: "/blog/python" },
-    { name: "DevOps", href: "/blog/devops" },
+    {
+      name: "Java",
+      href: "/blog/java",
+      subItems: [
+        { name: "Basics", href: "/blog/java/basics" },
+        { name: "Advanced", href: "/blog/java/advanced" }
+      ]
+    },
+    {
+      name: "Spring Boot",
+      href: "/blog/springboot",
+      subItems: [
+        { name: "Getting Started", href: "/blog/springboot/start" },
+        { name: "Deep Dive", href: "/blog/springboot/deep-dive" }
+      ]
+    },
+    {
+      name: "Python",
+      href: "/blog/python",
+      subItems: [
+        { name: "Tutorials", href: "/blog/python/tutorials" },
+        { name: "Tips & Tricks", href: "/blog/python/tips" }
+      ]
+    },
+    {
+      name: "DevOps",
+      href: "/blog/devops",
+      subItems: [
+        { name: "CI/CD", href: "/blog/devops/cicd" },
+        { name: "Tools", href: "/blog/devops/tools" }
+      ]
+    }
   ];
+
+  const toggleCategory = (name: string) => {
+    setOpenCategories((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 relative z-50">
@@ -48,13 +81,28 @@ export default function Header() {
               </button>
               <div className="absolute left-0 top-full w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
                 {blogItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
-                  >
-                    {item.name}
-                  </Link>
+                  <div key={item.name} className="relative group/item">
+                    <Link
+                      href={item.href}
+                      className="flex items-center justify-between px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                    >
+                      <span>{item.name}</span>
+                      {item.subItems && <ChevronDown className="w-3 h-3 ml-1" />}
+                    </Link>
+                    {item.subItems && (
+                      <div className="absolute left-full top-0 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition">
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -97,13 +145,32 @@ export default function Header() {
               {isBlogMobileOpen && (
                 <div className="pl-4 flex flex-col space-y-2">
                   {blogItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="text-gray-600 hover:text-blue-600 text-sm"
-                    >
-                      {item.name}
-                    </Link>
+                    <div key={item.name} className="flex flex-col space-y-1">
+                      <button
+                        onClick={() => toggleCategory(item.name)}
+                        className="flex items-center justify-between text-gray-600 hover:text-blue-600 text-sm"
+                      >
+                        <span>{item.name}</span>
+                        {item.subItems && (
+                          <ChevronDown
+                            className={`w-3 h-3 transition-transform ${openCategories[item.name] ? "rotate-180" : ""}`}
+                          />
+                        )}
+                      </button>
+                      {item.subItems && openCategories[item.name] && (
+                        <div className="pl-4 flex flex-col space-y-1 mt-1">
+                          {item.subItems.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              className="text-gray-600 hover:text-blue-600 text-sm"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
