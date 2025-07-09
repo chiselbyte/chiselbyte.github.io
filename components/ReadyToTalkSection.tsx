@@ -15,7 +15,11 @@ export default function ReadyToTalkSection() {
             </h2>
 
             <p className="text-base sm:text-xl md:text-2xl text-white text-opacity-90 leading-relaxed">
-              Our team is here to answer your question about Chiselbyte Softwares
+              Let's build something that lasts
+              <br />
+              <br />
+              Whether you're modernizing a legacy system or starting a bold new idea, let's connect.
+              
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
@@ -28,6 +32,4 @@ export default function ReadyToTalkSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
-}
+    </section>  );}
