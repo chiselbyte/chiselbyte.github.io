@@ -10,7 +10,7 @@ import {
   Mail, 
   Cloud 
 } from 'lucide-react';
-import image from "../assets/images/image2.png";
+import image from "../assets/images/image2.jpg";
 
 export default function CloudHostingSection() {
   const services = [

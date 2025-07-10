@@ -2,6 +2,8 @@
 
 import image4 from "../assets/images/image4.jpg";
 import image5 from "../assets/images/image5.jpg";
+import image6 from "../assets/images/image6.png";
+import image7 from "../assets/images/image7.png";
 
 export default function OurRecentWorksSection() {
   const sharedImage = "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1";
@@ -10,7 +12,7 @@ export default function OurRecentWorksSection() {
       id: 1,
       title: "A Ray of Hope",
       category: "Nonprofit Campaign",
-      image: image5.src,
+      image: image4.src,
       bgColor: "bg-orange-300",
       description: "A Ray of Hope is a digital initiative designed to empower NGOs by connecting them with donors, sharing inspiring stories, and driving real-world impact for underprivileged communities. The platform streamlines fundraising and amplifies the voices of those making a difference.",
       type: "nonprofit"
@@ -19,7 +21,7 @@ export default function OurRecentWorksSection() {
       id: 2,
       title: "Gym Training App",
       category: "Fitness & Wellness",
-      image: image4.src,
+      image: image5.src,
       bgColor: "bg-green-500",
       description: "A modern mobile app for gyms and personal trainers, featuring workout tracking, progress analytics, personalized plans, and real-time engagement to help users achieve their fitness goals.",
       type: "fitness"
@@ -28,7 +30,7 @@ export default function OurRecentWorksSection() {
       id: 3,
       title: "Dietitian App",
       category: "Health & Wellness",
-      image: sharedImage,
+      image: image6.src,
       bgColor: "bg-blue-400",
       description: "A nutrition focused application assisting users with personalized diet plans.",
       type: "health"
@@ -37,7 +39,7 @@ export default function OurRecentWorksSection() {
       id: 4,
       title: "Social Media Management",
       category: "Marketing",
-      image: sharedImage,
+      image: image7.src,
       bgColor: "bg-pink-200",
       description: "Tools and strategies for handling multi-platform social media campaigns.",
       type: "marketing"

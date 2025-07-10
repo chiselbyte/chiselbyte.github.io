@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import image from "../assets/images/image1.png";
+import image from "../assets/images/image1.jpg";
 
 export default function HeroSection() {
   return (

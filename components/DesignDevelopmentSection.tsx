@@ -13,7 +13,7 @@ import {
   Shuffle,
   Database
 } from 'lucide-react';
-import image from "../assets/images/image3.png";
+import image from "../assets/images/image3.jpg";
 
 export default function DesignDevelopmentSection() {
   const services = [
