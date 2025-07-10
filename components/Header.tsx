@@ -14,7 +14,9 @@ export default function Header() {
   const blogItems = blogData.categories;
 
   const toggleCategory = (name: string) => {
-    setOpenCategories((prev) => ({ ...prev, [name]: !prev[name] }));
+    setOpenCategories((prev) =>
+      prev[name] ? {} : { [name]: true }
+    );
   };
 
   return (

@@ -18,14 +18,13 @@ export default function BlogPostPage({ params }: { params: { category: string; s
   const category = blogData.categories.find((c) => c.slug === params.category);
   const post = category?.subItems?.find((p: any) => p.slug === params.slug);
   const title = post ? post.name : params.slug;
+  const content = post?.content ?? 'Content coming soon.';
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <section className="py-20 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">{title} Coming Soon</h1>
-        <p className="text-gray-600 mt-4">
-          Stay tuned for updates in our {category?.name} section.
-        </p>
+        <h1 className="text-4xl font-bold text-gray-900">{title}</h1>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">{content}</p>
       </section>
       <Footer />
     </main>

@@ -3,36 +3,80 @@
     {
       "name": "Java",
       "slug": "java",
+      "content": "Introduction to Java programming.",
       "subItems": [
-        { "name": "Basics", "slug": "basics", "href": "/blog/java/basics" },
-        { "name": "Advanced", "slug": "advanced", "href": "/blog/java/advanced" }
+        {
+          "name": "Basics",
+          "slug": "basics",
+          "href": "/blog/java/basics",
+          "content": "Fundamental Java syntax and concepts."
+        },
+        {
+          "name": "Advanced",
+          "slug": "advanced",
+          "href": "/blog/java/advanced",
+          "content": "Deeper topics like generics and concurrency."
+        }
       ],
       "href": "/blog/java"
     },
     {
       "name": "Spring Boot",
       "slug": "springboot",
+      "content": "Guides and tutorials for Spring Boot.",
       "subItems": [
-        { "name": "Getting Started", "slug": "start", "href": "/blog/springboot/start" },
-        { "name": "Deep Dive", "slug": "deep-dive", "href": "/blog/springboot/deep-dive" }
+        {
+          "name": "Getting Started",
+          "slug": "start",
+          "href": "/blog/springboot/start",
+          "content": "Set up your first Spring Boot application."
+        },
+        {
+          "name": "Deep Dive",
+          "slug": "deep-dive",
+          "href": "/blog/springboot/deep-dive",
+          "content": "In-depth exploration of Spring Boot features."
+        }
       ],
       "href": "/blog/springboot"
     },
     {
       "name": "Python",
       "slug": "python",
+      "content": "Learn Python programming and best practices.",
       "subItems": [
-        { "name": "Tutorials", "slug": "tutorials", "href": "/blog/python/tutorials" },
-        { "name": "Tips & Tricks", "slug": "tips", "href": "/blog/python/tips" }
+        {
+          "name": "Tutorials",
+          "slug": "tutorials",
+          "href": "/blog/python/tutorials",
+          "content": "Step-by-step Python tutorials for beginners."
+        },
+        {
+          "name": "Tips & Tricks",
+          "slug": "tips",
+          "href": "/blog/python/tips",
+          "content": "Handy tips to improve your Python code."
+        }
       ],
       "href": "/blog/python"
     },
     {
       "name": "DevOps",
       "slug": "devops",
+      "content": "Best practices for modern DevOps.",
       "subItems": [
-        { "name": "CI/CD", "slug": "cicd", "href": "/blog/devops/cicd" },
-        { "name": "Tools", "slug": "tools", "href": "/blog/devops/tools" }
+        {
+          "name": "CI/CD",
+          "slug": "cicd",
+          "href": "/blog/devops/cicd",
+          "content": "Continuous integration and deployment workflows."
+        },
+        {
+          "name": "Tools",
+          "slug": "tools",
+          "href": "/blog/devops/tools",
+          "content": "Popular DevOps tools and how to use them."
+        }
       ],
       "href": "/blog/devops"
     }
