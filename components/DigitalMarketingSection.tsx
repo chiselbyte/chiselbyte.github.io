@@ -10,49 +10,49 @@ import {
   Mail, 
   Cloud 
 } from 'lucide-react';
-import image from "../assets/images/image2.jpg";
+import image from "../assets/images/image2.png";
 
 export default function CloudHostingSection() {
   const services = [
     {
       icon: TrendingUp,
       title: "SEO Optimization",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Globe,
       title: "Social Media Marketing",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Mail,
       title: "Email Campaigns",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Monitor,
       title: "Content Strategy",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Database,
       title: "Analytics & Reporting",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Cloud,
       title: "PPC Advertising",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: FolderOpen,
       title: "Influencer Outreach",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Folder,
       title: "Brand Reputation Management",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     }
   ];
 

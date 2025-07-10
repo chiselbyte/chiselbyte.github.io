@@ -8,29 +8,29 @@ export default function FeaturesSection() {
       icon: Monitor,
       title: "Custom Application Development",
       description: "From ideation to production, we build robust, scalable software tailored to your business.",
-      bgColor: "bg-green-100",
-      iconColor: "text-green-600"
+      bgColor: "bg-white",
+      iconColor: "text-blue-600"
     },
     {
       icon: Share2,
       title: "Enterprise Integration",
       description: "Simplify complexity. We connect your systems through reliable, secure, and maintainable integrations.",
-      bgColor: "bg-pink-100",
-      iconColor: "text-pink-600"
+      bgColor: "bg-white",
+      iconColor: "text-blue-600"
     },
     {
       icon: Cloud,
       title: "Microservices & Cloud Migration",
       description: "Break monoliths, embrace scale. We design systems for speed, resilience, and continuous deployment.",
-      bgColor: "bg-purple-100",
-      iconColor: "text-purple-600"
+      bgColor: "bg-white",
+      iconColor: "text-blue-600"
     },
     {
       icon: Shield,
       title: "Secure API Development",
       description: "From design to deployment, we create APIs that are clean, well-documented, and secured by design.",
-      bgColor: "bg-orange-100",
-      iconColor: "text-orange-600"
+      bgColor: "bg-white",
+      iconColor: "text-blue-600"
     }
   ];
 

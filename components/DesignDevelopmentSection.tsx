@@ -13,19 +13,19 @@ import {
   Shuffle,
   Database
 } from 'lucide-react';
-import image from "../assets/images/image3.jpg";
+import image from "../assets/images/image3.png";
 
 export default function DesignDevelopmentSection() {
   const services = [
     {
       icon: Monitor,
       title: "Java & Quarkus Development",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Shuffle, // Shuffle for Apache Camel (integration/routing)
       title: "Apache Camel Integrations",
-      iconColor: "text-orange-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Share2, // Share2 for Kafka (event streaming)
@@ -40,12 +40,12 @@ export default function DesignDevelopmentSection() {
     {
       icon: ShieldCheck,
       title: "Secure API Design & Avro-based Serialization",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Palette,
       title: "Responsive design",
-      iconColor: "text-pink-600"
+      iconColor: "text-blue-600"
     },
     {
       icon: Code,
@@ -55,7 +55,7 @@ export default function DesignDevelopmentSection() {
     {
       icon: Smartphone,
       title: "Mobile apps development",
-      iconColor: "text-green-600"
+      iconColor: "text-blue-600"
     },
   ];
 
