@@ -1,17 +1,15 @@
+import blogData from '@/data/blog.json';
+
 export async function generateStaticParams() {
-  return [
-    { category: 'java' },
-    { category: 'springboot' },
-    { category: 'python' },
-    { category: 'devops' },
-  ];
+  return blogData.categories.map((c) => ({ category: c.slug }));
 }
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function BlogCategoryPage({ params }: { params: { category: string } }) {
-  const title = params.category.charAt(0).toUpperCase() + params.category.slice(1);
+  const category = blogData.categories.find((c) => c.slug === params.category);
+  const title = category ? category.name : params.category;
   return (
     <main className="min-h-screen bg-white">
       <Header />

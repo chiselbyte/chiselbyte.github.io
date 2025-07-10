@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "name": "Java",
+      "slug": "java",
+      "subItems": [
+        { "name": "Basics", "slug": "basics", "href": "/blog/java/basics" },
+        { "name": "Advanced", "slug": "advanced", "href": "/blog/java/advanced" }
+      ],
+      "href": "/blog/java"
+    },
+    {
+      "name": "Spring Boot",
+      "slug": "springboot",
+      "subItems": [
+        { "name": "Getting Started", "slug": "start", "href": "/blog/springboot/start" },
+        { "name": "Deep Dive", "slug": "deep-dive", "href": "/blog/springboot/deep-dive" }
+      ],
+      "href": "/blog/springboot"
+    },
+    {
+      "name": "Python",
+      "slug": "python",
+      "subItems": [
+        { "name": "Tutorials", "slug": "tutorials", "href": "/blog/python/tutorials" },
+        { "name": "Tips & Tricks", "slug": "tips", "href": "/blog/python/tips" }
+      ],
+      "href": "/blog/python"
+    },
+    {
+      "name": "DevOps",
+      "slug": "devops",
+      "subItems": [
+        { "name": "CI/CD", "slug": "cicd", "href": "/blog/devops/cicd" },
+        { "name": "Tools", "slug": "tools", "href": "/blog/devops/tools" }
+      ],
+      "href": "/blog/devops"
+    }
+  ]
+}

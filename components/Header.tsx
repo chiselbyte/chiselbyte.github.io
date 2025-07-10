@@ -4,46 +4,14 @@ import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logoImage from "../assets/images/logo.png";
 import Link from "next/link";
+import blogData from "@/data/blog.json";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBlogMobileOpen, setIsBlogMobileOpen] = useState(false);
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({});
 
-  const blogItems = [
-    {
-      name: "Java",
-      href: "/blog/java",
-      subItems: [
-        { name: "Basics", href: "/blog/java/basics" },
-        { name: "Advanced", href: "/blog/java/advanced" }
-      ]
-    },
-    {
-      name: "Spring Boot",
-      href: "/blog/springboot",
-      subItems: [
-        { name: "Getting Started", href: "/blog/springboot/start" },
-        { name: "Deep Dive", href: "/blog/springboot/deep-dive" }
-      ]
-    },
-    {
-      name: "Python",
-      href: "/blog/python",
-      subItems: [
-        { name: "Tutorials", href: "/blog/python/tutorials" },
-        { name: "Tips & Tricks", href: "/blog/python/tips" }
-      ]
-    },
-    {
-      name: "DevOps",
-      href: "/blog/devops",
-      subItems: [
-        { name: "CI/CD", href: "/blog/devops/cicd" },
-        { name: "Tools", href: "/blog/devops/tools" }
-      ]
-    }
-  ];
+  const blogItems = blogData.categories;
 
   const toggleCategory = (name: string) => {
     setOpenCategories((prev) => ({ ...prev, [name]: !prev[name] }));
