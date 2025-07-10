@@ -94,7 +94,7 @@ export default function DesignDevelopmentSection() {
                 return (
                   <div
                     key={index}
-                    className="bg-gray-50 rounded-xl p-4 sm:p-6 hover:shadow-md transition-all duration-300 hover:transform hover:scale-105"
+                    className="bg-gray-100 rounded-xl p-4 sm:p-6 hover:shadow-md transition-all duration-300 hover:transform hover:scale-105"
                   >
                     <div className="flex items-center space-x-4">
                       <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">

@@ -47,7 +47,7 @@ export default function Footer() {
             <div className="space-y-6 sm:col-span-2 lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-900">Chiselbyte Softwares</span>
+                <span className="text-2xl font-bold text-gray-900">ChiselByte Softwares</span>
               </div>
 
               {/* Description */}
@@ -95,7 +95,7 @@ export default function Footer() {
                     href=""
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
                   >
-                    contact@chiselbyte.com
+                    info@chiselbyte.com
                   </a>
                 </div>
 

@@ -35,12 +35,12 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="services" className="py-8 sm:py-12 md:py-20 bg-white">
+    <section id="services" className="relative py-8 sm:py-12 md:py-20 bg-white">
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>
-        <div className="absolute top-40 right-40 w-2 h-2 bg-purple-400 rounded-full"></div>
+        <div className="absolute top-40 right-40 w-2 h-2 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-32 left-32 w-4 h-4 bg-green-400 rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-3 h-3 bg-orange-400 rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full"></div>
         <div className="absolute top-60 right-80 w-2 h-2 bg-purple-400 rounded-full"></div>
         <div className="absolute bottom-60 left-80 w-3 h-3 bg-purple-400 rounded-full"></div>
       </div>
@@ -69,7 +69,7 @@ export default function FeaturesSection() {
               return (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-green-300 via-green-200 to-blue-400 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
+                  className="bg-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
                 >
                   <div className="space-y-4 sm:space-y-6">
                     {/* Icon */}

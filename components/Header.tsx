@@ -27,7 +27,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <img src={logoImage.src} alt="Chiselbyte" className="h-24 cursor-pointer" />
-              <span className="text-lg font-semibold text-gray-800">Chiselbyte</span>
+              <span className="text-xl font-semibold text-gray-800">ChiselByte</span>
             </Link>
           </div>
 

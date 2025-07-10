@@ -26,7 +26,7 @@ export default function ContactPage() {
             <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Contact Us</h1>
             <p className="text-gray-600 mb-8 text-center">
               We'd love to hear from you! Fill out the form below or email us at
-              <a href="mailto:contact@chiselbyte.com" className="text-green-600 font-medium"> contact@chiselbyte.com</a>.
+              <a href="mailto:contact@chiselbyte.com" className="text-green-600 font-medium"> info@chiselbyte.com</a>.
             </p>
             <form className="space-y-6" onSubmit={async (e) => {
               e.preventDefault();
