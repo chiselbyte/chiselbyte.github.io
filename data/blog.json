@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "name": "Java",
+      "slug": "java",
+      "subItems": [
+        {
+          "name": "Basics",
+          "slug": "basics",
+          "href": "/blog/java/basics",
+          "contentPath": "content/blog/java/basics.md"
+        },
+        {
+          "name": "Advanced",
+          "slug": "advanced",
+          "href": "/blog/java/advanced",
+          "contentPath": "content/blog/java/advanced.md"
+        }
+      ],
+      "href": "/blog/java"
+    }
+  ]
+}

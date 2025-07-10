@@ -21,8 +21,8 @@ export default function Footer() {
   ];
 
   const socialIcons = [
-    { icon: Facebook, href: undefined, color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
-    { icon: XIcon, href: undefined, color: "text-black", bg: "bg-white hover:bg-gray-100" },
+    // { icon: Facebook, href: undefined, color: "text-blue-600 hover:text-blue-700", bg: "hover:bg-blue-50" },
+    // { icon: XIcon, href: undefined, color: "text-black", bg: "bg-white hover:bg-gray-100" },
     { icon: Instagram, href: "https://www.instagram.com/chiselbyte/", color: "text-pink-500 hover:text-pink-600", bg: "hover:bg-pink-50" },
     { icon: Linkedin, href: "https://in.linkedin.com/in/chisel-byte-b55817367", color: "text-blue-700 hover:text-blue-800", bg: "hover:bg-blue-50" }
   ];
@@ -142,12 +142,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 py-4 sm:py-6">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-2 sm:space-y-4 md:space-y-0">
-            <div className="text-gray-600 text-center text-xs sm:text-sm">
-              <p>Copyright © 2025 ChiselByte Softwares</p>
+          <div className="border-t border-gray-200 py-4 sm:py-6">
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-2 sm:space-y-4 md:space-y-0">
+              <div className="text-gray-600 text-center text-xs sm:text-sm">
+                <p>Copyright © 2025 ChiselByte Softwares</p>
+              </div>
             </div>
-
           </div>
         </div>
-      </div>    </footer>  );}
+      </footer>
+  );
+}
