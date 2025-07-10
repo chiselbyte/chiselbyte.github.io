@@ -1,6 +1,8 @@
 import blogData from '@/data/blog.json';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import fs from 'fs';
+import path from 'path';
 
 export async function generateStaticParams() {
   const params: { category: string; slug: string }[] = [];
@@ -18,7 +20,21 @@ export default function BlogPostPage({ params }: { params: { category: string; s
   const category = blogData.categories.find((c) => c.slug === params.category);
   const post = category?.subItems?.find((p: any) => p.slug === params.slug);
   const title = post ? post.name : params.slug;
-  const content = post?.content ?? 'Content coming soon.';
+
+  let content = 'Content coming soon.';
+  if (post) {
+    if (post.contentPath) {
+      try {
+        const filePath = path.join(process.cwd(), post.contentPath);
+        content = fs.readFileSync(filePath, 'utf8');
+      } catch (err) {
+        content = 'Content coming soon.';
+      }
+    } else if (post.content) {
+      content = post.content;
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
