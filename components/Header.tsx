@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
-import logoImage from "../assets/images/logo.png";
+import logoImage from "../assets/images/logo1.png";
 import Link from "next/link";
 import blogData from "@/data/blog.json";
 
@@ -25,8 +25,9 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" className="flex items-center">
               <img src={logoImage.src} alt="Chiselbyte" className="h-24 cursor-pointer" />
+              <span className="text-lg font-semibold text-gray-800">Chiselbyte</span>
             </Link>
           </div>
 
@@ -34,18 +35,18 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
             >
               About Us
             </Link>
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors font-medium cursor-pointer">
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg cursor-pointer">
                 <span>Blog</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -54,7 +55,7 @@ export default function Header() {
                   <div key={item.name} className="relative group/item">
                     <button
                       type="button"
-                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium"
                     >
                       <span>{item.name}</span>
                       {item.subItems && (
@@ -70,7 +71,7 @@ export default function Header() {
                           <Link
                             key={sub.name}
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium"
                           >
                             {sub.name}
                           </Link>
@@ -83,11 +84,12 @@ export default function Header() {
             </div>
             <Link
               href="/contact"
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
             >
               Contact Us
             </Link>
           </nav>
+
 
           {/* Mobile menu button */}
           <button

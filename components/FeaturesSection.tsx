@@ -69,7 +69,7 @@ export default function FeaturesSection() {
               return (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
+                  className="bg-gradient-to-br from-green-300 via-green-200 to-blue-400 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
                 >
                   <div className="space-y-4 sm:space-y-6">
                     {/* Icon */}
