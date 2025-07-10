@@ -1,3 +1,3 @@
-# Advanced Java
+# Advanced
 
-Dive deeper into Java with topics like generics, concurrency, and performance optimization.
+Advanced content coming soon.

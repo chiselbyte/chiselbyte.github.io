@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import fs from 'fs';
 import path from 'path';
+import { marked } from 'marked';
 
 type BlogPost = {
   name: string;
@@ -29,24 +30,28 @@ export default function BlogPostPage({ params }: { params: { category: string; s
   const post = category?.subItems?.find((p) => p.slug === params.slug) as BlogPost | undefined;
   const title = post ? post.name : params.slug;
 
-  let content = 'Content coming soon.';
+  let markdown = 'Content coming soon.';
   if (post?.contentPath) {
     try {
       const filePath = path.join(process.cwd(), post.contentPath);
-      content = fs.readFileSync(filePath, 'utf8');
+      markdown = fs.readFileSync(filePath, 'utf8');
     } catch (err) {
-      content = 'Content coming soon.';
+      markdown = 'Content coming soon.';
     }
   } else if (post?.content) {
-    content = post.content;
+    markdown = post.content;
   }
+  const content = marked.parse(markdown);
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <section className="py-20 text-center">
         <h1 className="text-4xl font-bold text-gray-900">{title}</h1>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">{content}</p>
+        <div
+          className="prose prose-sm text-gray-600 mt-4 max-w-2xl mx-auto"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </section>
       <Footer />
     </main>

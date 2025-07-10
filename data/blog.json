@@ -3,7 +3,6 @@
     {
       "name": "Java",
       "slug": "java",
-      "content": "Introduction to Java programming.",
       "subItems": [
         {
           "name": "Basics",
@@ -19,60 +18,6 @@
         }
       ],
       "href": "/blog/java"
-    },
-    {
-      "name": "Spring Boot",
-      "slug": "springboot",
-      "content": "Guides and tutorials for Spring Boot.",
-      "subItems": [
-        {
-          "name": "Getting Started",
-          "slug": "start",
-          "href": "/blog/springboot/start"
-        },
-        {
-          "name": "Deep Dive",
-          "slug": "deep-dive",
-          "href": "/blog/springboot/deep-dive"
-        }
-      ],
-      "href": "/blog/springboot"
-    },
-    {
-      "name": "Python",
-      "slug": "python",
-      "content": "Learn Python programming and best practices.",
-      "subItems": [
-        {
-          "name": "Tutorials",
-          "slug": "tutorials",
-          "href": "/blog/python/tutorials"
-        },
-        {
-          "name": "Tips & Tricks",
-          "slug": "tips",
-          "href": "/blog/python/tips"
-        }
-      ],
-      "href": "/blog/python"
-    },
-    {
-      "name": "DevOps",
-      "slug": "devops",
-      "content": "Best practices for modern DevOps.",
-      "subItems": [
-        {
-          "name": "CI/CD",
-          "slug": "cicd",
-          "href": "/blog/devops/cicd"
-        },
-        {
-          "name": "Tools",
-          "slug": "tools",
-          "href": "/blog/devops/tools"
-        }
-      ],
-      "href": "/blog/devops"
     }
   ]
 }
