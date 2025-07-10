@@ -4,6 +4,14 @@ import Footer from '@/components/Footer';
 import fs from 'fs';
 import path from 'path';
 
+type BlogPost = {
+  name: string;
+  slug: string;
+  href: string;
+  contentPath?: string;
+  content?: string;
+};
+
 export async function generateStaticParams() {
   const params: { category: string; slug: string }[] = [];
   blogData.categories.forEach((c) => {
@@ -18,21 +26,19 @@ export async function generateStaticParams() {
 
 export default function BlogPostPage({ params }: { params: { category: string; slug: string } }) {
   const category = blogData.categories.find((c) => c.slug === params.category);
-  const post = category?.subItems?.find((p: any) => p.slug === params.slug);
+  const post = category?.subItems?.find((p) => p.slug === params.slug) as BlogPost | undefined;
   const title = post ? post.name : params.slug;
 
   let content = 'Content coming soon.';
-  if (post) {
-    if (post.contentPath) {
-      try {
-        const filePath = path.join(process.cwd(), post.contentPath);
-        content = fs.readFileSync(filePath, 'utf8');
-      } catch (err) {
-        content = 'Content coming soon.';
-      }
-    } else if (post.content) {
-      content = post.content;
+  if (post?.contentPath) {
+    try {
+      const filePath = path.join(process.cwd(), post.contentPath);
+      content = fs.readFileSync(filePath, 'utf8');
+    } catch (err) {
+      content = 'Content coming soon.';
     }
+  } else if (post?.content) {
+    content = post.content;
   }
 
   return (
