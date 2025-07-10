@@ -28,14 +28,12 @@
         {
           "name": "Getting Started",
           "slug": "start",
-          "href": "/blog/springboot/start",
-          "content": "Set up your first Spring Boot application."
+          "href": "/blog/springboot/start"
         },
         {
           "name": "Deep Dive",
           "slug": "deep-dive",
-          "href": "/blog/springboot/deep-dive",
-          "content": "In-depth exploration of Spring Boot features."
+          "href": "/blog/springboot/deep-dive"
         }
       ],
       "href": "/blog/springboot"
@@ -48,14 +46,12 @@
         {
           "name": "Tutorials",
           "slug": "tutorials",
-          "href": "/blog/python/tutorials",
-          "content": "Step-by-step Python tutorials for beginners."
+          "href": "/blog/python/tutorials"
         },
         {
           "name": "Tips & Tricks",
           "slug": "tips",
-          "href": "/blog/python/tips",
-          "content": "Handy tips to improve your Python code."
+          "href": "/blog/python/tips"
         }
       ],
       "href": "/blog/python"
@@ -68,14 +64,12 @@
         {
           "name": "CI/CD",
           "slug": "cicd",
-          "href": "/blog/devops/cicd",
-          "content": "Continuous integration and deployment workflows."
+          "href": "/blog/devops/cicd"
         },
         {
           "name": "Tools",
           "slug": "tools",
-          "href": "/blog/devops/tools",
-          "content": "Popular DevOps tools and how to use them."
+          "href": "/blog/devops/tools"
         }
       ],
       "href": "/blog/devops"
