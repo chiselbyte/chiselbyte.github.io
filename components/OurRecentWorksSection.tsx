@@ -78,8 +78,6 @@ export default function OurRecentWorksSection() {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 md:mb-12">
           {portfolioItems.map((item) => {
-            // Add clickable redirect for the first project
-            const isFirst = item.id === 1;
             const cardContent = (
               <div className="relative h-full cursor-pointer">
                 {/* Card background gradient effect */}
@@ -108,13 +106,7 @@ export default function OurRecentWorksSection() {
                 key={item.id}
                 className={`bg-neutral-900/90 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 aspect-[4/5] relative border-2 border-white/10 hover:border-green-400 group`}
               >
-                {isFirst ? (
-                  <a href="https://arayofhope.org.in/" target="_blank" rel="noopener noreferrer" className="block h-full w-full">
-                    {cardContent}
-                  </a>
-                ) : (
-                  cardContent
-                )}
+              {cardContent}
               </div>
             );
           })}

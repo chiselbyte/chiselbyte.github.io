@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import logoImage from "../assets/images/logo.png";
 import Link from "next/link";
 import blogData from "@/data/blog.json";
@@ -50,13 +50,18 @@ export default function Header() {
               <div className="absolute left-0 top-full w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
                 {blogItems.map((item) => (
                   <div key={item.name} className="relative group/item">
-                    <Link
-                      href={item.href}
-                      className="flex items-center justify-between px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                    <button
+                      type="button"
+                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
                     >
                       <span>{item.name}</span>
-                      {item.subItems && <ChevronDown className="w-3 h-3 ml-1" />}
-                    </Link>
+                      {item.subItems && (
+                        <>
+                          <ChevronRight className="w-3 h-3 ml-1 hidden md:block" />
+                          <ChevronDown className="w-3 h-3 ml-1 md:hidden" />
+                        </>
+                      )}
+                    </button>
                     {item.subItems && (
                       <div className="absolute left-full top-0 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition">
                         {item.subItems.map((sub) => (
