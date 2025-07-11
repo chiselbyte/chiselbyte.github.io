@@ -2,12 +2,12 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA4mIgTAWy97HH4smFV5-2PxK1tMtQXpMw",
-  authDomain: "gym-training-app-f84a2.firebaseapp.com",
-  projectId: "gym-training-app-f84a2",
-  storageBucket: "gym-training-app-f84a2.firebasestorage.app",
-  messagingSenderId: "188999264627",
-  appId: "1:188999264627:web:bfa182efd35e5d4192fd06"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || '',
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || '',
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || '',
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '',
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || ''
 };
 
 // Ensure we don't re-initialize if already initialized
