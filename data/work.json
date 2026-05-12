@@ -1,0 +1,56 @@
+{
+  "caseStudies": [
+    {
+      "slug": "lead-qualification-saas",
+      "title": "Lead qualification for a B2B SaaS",
+      "client": "A B2B SaaS company",
+      "pillar": "AI",
+      "pillarSlug": "ai-development",
+      "outcome": "Schema-validated warm / lukewarm / cold classification from long-form prospect content, with structured reasoning fields and audit logs.",
+      "summary": "Replaced manual SDR-led lead grading with an LLM pipeline that reads articles, blog posts, and web pages, returns a strict JSON verdict, and writes an audit trail every team can defend.",
+      "techBadges": ["Claude", "FastAPI", "Pydantic", "Python", "n8n", "Postgres"],
+      "date": "2026-02",
+      "contentPath": "content/work/lead-qualification-saas.md",
+      "status": "published"
+    },
+    {
+      "slug": "multi-bureau-credit-dashboard",
+      "title": "Multi-bureau credit dashboards for a lending startup",
+      "client": "A lending startup",
+      "pillar": "Lending",
+      "pillarSlug": "lending",
+      "outcome": "Unified CIBIL, CRIF, and Equifax responses (consumer + commercial) into branded dashboards with derived utilization, tenure, and DPD insights.",
+      "summary": "Ingested deeply nested bureau JSON variants and rendered them into a single branded report layer with derived insights credit teams could actually read.",
+      "techBadges": ["Node.js", "Postgres", "React", "Java", "n8n"],
+      "date": "2026-01",
+      "contentPath": "content/work/multi-bureau-credit-dashboard.md",
+      "status": "stub"
+    },
+    {
+      "slug": "whatsapp-portal-agency",
+      "title": "Multi-tenant WhatsApp portal for an agency",
+      "client": "A digital agency",
+      "pillar": "WhatsApp",
+      "pillarSlug": "whatsapp",
+      "outcome": "Embedded Signup, template lifecycle, and broadcast infrastructure serving dozens of merchant tenants — no per-message BSP markup.",
+      "summary": "Built the portal infrastructure that let an agency onboard merchant tenants directly via Meta Embedded Signup, owning the messaging margin instead of paying a BSP.",
+      "techBadges": ["Next.js", "Express", "Meta Graph API", "Postgres", "Railway"],
+      "date": "2025-12",
+      "contentPath": "content/work/whatsapp-portal-agency.md",
+      "status": "stub"
+    },
+    {
+      "slug": "ops-automation-financial-firm",
+      "title": "Ops automation for a financial services firm",
+      "client": "A financial services firm",
+      "pillar": "Automation",
+      "pillarSlug": "automation",
+      "outcome": "n8n flows replaced manual onboarding coordination, document-chasing spreadsheets, and Slack-handoff Excel files — without a custom admin panel.",
+      "summary": "Replaced an Excel-and-Slack ops process with n8n flows that route cases, chase documents, and notify teams — without engineering a single admin screen.",
+      "techBadges": ["n8n", "WhatsApp API", "Postgres", "Google Sheets API"],
+      "date": "2025-11",
+      "contentPath": "content/work/ops-automation-financial-firm.md",
+      "status": "stub"
+    }
+  ]
+}

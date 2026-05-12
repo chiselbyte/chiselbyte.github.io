@@ -1,23 +1,62 @@
 {
   "categories": [
     {
-      "name": "Java",
-      "slug": "java",
-      "subItems": [
+      "name": "Opinions",
+      "slug": "opinions",
+      "description": "Strong views on how to build software. Most of these we will defend in a room of skeptical engineers.",
+      "posts": [
         {
-          "name": "Basics",
-          "slug": "basics",
-          "href": "/blog/java/basics",
-          "contentPath": "content/blog/java/basics.md"
+          "slug": "llm-apps-fail-in-production",
+          "title": "Why most LLM apps fail in production (and how to make yours boring)",
+          "description": "Free-form LLM output is a runtime bug surface, not a product. Here's why we treat Pydantic schemas as the contract, validate every call, and route failures to humans.",
+          "date": "2026-05-08",
+          "tags": ["AI", "Engineering"],
+          "contentPath": "content/blog/opinions/llm-apps-fail-in-production.md",
+          "status": "published"
         },
         {
-          "name": "Advanced",
-          "slug": "advanced",
-          "href": "/blog/java/advanced",
-          "contentPath": "content/blog/java/advanced.md"
+          "slug": "n8n-vs-admin-panels",
+          "title": "Why we build with n8n instead of writing admin panels",
+          "description": "Most internal tools are forms wired to databases — exactly what n8n already is. Here's what we use n8n for, and the line where it stops being the right answer.",
+          "date": "2026-04-22",
+          "tags": ["Automation", "n8n", "Engineering"],
+          "contentPath": "content/blog/opinions/n8n-vs-admin-panels.md",
+          "status": "published"
+        },
+        {
+          "slug": "chat-is-the-worst-llm-ui",
+          "title": "Chat is the worst UI for an LLM",
+          "description": "Chat windows dump cognitive load on the user and reliability burden on the model. The highest-leverage LLM applications are pipelines, not conversations.",
+          "date": "2026-03-15",
+          "tags": ["AI", "Product"],
+          "contentPath": "content/blog/opinions/chat-is-the-worst-llm-ui.md",
+          "status": "published"
         }
-      ],
-      "href": "/blog/java"
+      ]
+    },
+    {
+      "name": "AI Engineering",
+      "slug": "ai-engineering",
+      "description": "How we build production LLM systems — schemas, evals, prompt versioning, cost control, and human-in-the-loop fallbacks.",
+      "posts": []
+    },
+    {
+      "name": "Lending Tech",
+      "slug": "lending-tech",
+      "description": "Lending and fintech engineering — KYC, bureau integrations, decisioning workflows, and operational patterns that hold up under audit.",
+      "posts": []
+    },
+    {
+      "name": "WhatsApp & APIs",
+      "slug": "whatsapp-apis",
+      "description": "WhatsApp Business API, Meta Embedded Signup, webhooks, and the policy questions Meta actually asks during app review.",
+      "posts": []
+    },
+    {
+      "name": "Automation",
+      "slug": "automation",
+      "description": "n8n patterns, integrations, and case studies in process automation that survives real-world traffic.",
+      "posts": []
     }
   ]
 }

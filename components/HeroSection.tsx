@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 import image from "../assets/images/image1.jpg";
 
 export default function HeroSection() {
@@ -31,13 +32,32 @@ export default function HeroSection() {
           {/* Left content */}
           <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Precision in Every Byte
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                We build production LLM systems.
+                <br />
+                <span className="text-green-600">Not chatbots.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg">
-                At ChiselByte, we’re not just building software—we’re crafting solutions. Like a master artisan chisels stone with precision and care, we write code with intention, clarity, and pride. We believe that technology, when crafted well, becomes invisible—it just works.From our first line of code to the final deployment, we’re obsessed with delivering clean, scalable, and high-quality software that not only works but lasts. Because to us, software is more than logic—it’s legacy.
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
+                Structured extraction, classification, decision support — schema-validated, observable, and boring on purpose. We also ship lending platforms, WhatsApp portals, and n8n automations for teams that want fewer demos and more shipped software.
               </p>
+
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                <Link
+                  href="#work"
+                  onClick={() => trackEvent("cta_see_our_work", { location: "hero" })}
+                  className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                >
+                  See our work
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => trackEvent("cta_start_project", { location: "hero" })}
+                  className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200"
+                >
+                  Start a project
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -45,7 +65,7 @@ export default function HeroSection() {
           <div className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="relative w-full max-w-[16rem] sm:max-w-xs md:max-w-md lg:max-w-2xl">
               {/* Responsive static image */}
-              <img 
+              <img
                 src={image.src}
                 alt="ChiselByte Hero"
                 className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-2xl shadow-2xl object-contain mx-auto"

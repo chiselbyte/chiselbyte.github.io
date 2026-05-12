@@ -1,13 +1,26 @@
+# Firebase App Hosting environment configuration.
+#
+# Secrets must first be created in Firebase Secret Manager:
+#   firebase apphosting:secrets:set WEB3FORMS_ACCESS_KEY
+#
+# Then uncomment the relevant entries below to expose them to the build/runtime.
+
 env:
-  # - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-  #   secret: NEXT_PUBLIC_FIREBASE_API_KEY
-  # - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-  #   secret: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-  # - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-  #   secret: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-  # - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-  #   secret: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-  # - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-  #   secret: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-  # - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-  #   secret: NEXT_PUBLIC_FIREBASE_APP_ID
+  # ---- Contact form (Web3Forms) ----
+  # The access key is already hard-coded as a fallback in the API route, so this is only
+  # needed if you rotate the key. Web3Forms access keys are designed to be public.
+  # - variable: WEB3FORMS_ACCESS_KEY
+  #   secret: WEB3FORMS_ACCESS_KEY
+
+  # ---- Site URL (used by metadata, sitemap, robots) ----
+  # - variable: NEXT_PUBLIC_SITE_URL
+  #   value: https://chiselbyte.com
+
+  # ---- Analytics (Plausible) ----
+  # Set this to enable Plausible. Leave unset to disable tracking entirely.
+  # - variable: NEXT_PUBLIC_PLAUSIBLE_DOMAIN
+  #   value: chiselbyte.com
+  #
+  # Optional. Override the Plausible script URL (e.g. for self-hosted Plausible or Umami).
+  # - variable: NEXT_PUBLIC_PLAUSIBLE_SRC
+  #   value: https://plausible.io/js/script.js

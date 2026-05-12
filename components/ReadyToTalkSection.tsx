@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ReadyToTalkSection() {
   return (
@@ -14,30 +14,39 @@ export default function ReadyToTalkSection() {
         <div className="absolute top-60 right-80 w-2 h-2 bg-purple-400 rounded-full"></div>
         <div className="absolute bottom-60 left-80 w-3 h-3 bg-purple-400 rounded-full"></div>
       </div>
-      
-      {/* Main CTA Section */}
+
       <div className="py-10 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6 sm:space-y-8">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Ready To Talk?
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Have a scoped problem?
+              <br />
+              Let's pick the smallest thing that ships.
             </h2>
 
-            <p className="text-base sm:text-xl md:text-2xl text-gray-600 text-opacity-90 leading-relaxed">
-              Let's build something that lasts
-              <br />
-              Whether you're modernizing a legacy system or starting a bold new idea, let's connect.
-              
+            <p className="text-sm sm:text-base md:text-lg text-gray-800/90 leading-relaxed">
+              We respond within one business day. If we're not the right fit, we'll say so.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
-              <Link href="/contact" passHref legacyBehavior>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  CONTACT US
-                </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link
+                href="/contact"
+                onClick={() => trackEvent("cta_start_project", { location: "ready_to_talk" })}
+                className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Start a project
+              </Link>
+              <Link
+                href="/how-we-build"
+                onClick={() => trackEvent("cta_see_how_we_work", { location: "ready_to_talk" })}
+                className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300"
+              >
+                See how we work
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </section>  );}
+    </section>
+  );
+}

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useRef } from "react";
 import contactImg from "@/../assets/images/contact.jpg";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [success, setSuccess] = useState(false);
@@ -33,11 +34,13 @@ export default function ContactPage() {
               setSuccess(false);
               setError("");
               if (timeoutRef.current) clearTimeout(timeoutRef.current);
+              trackEvent("contact_form_submit");
               const form = e.currentTarget;
               const name = (form.elements.namedItem("name") as HTMLInputElement)?.value || "";
               const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
               const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
-              const formData = { name, email, message };
+              const website = (form.elements.namedItem("website") as HTMLInputElement)?.value || "";
+              const formData = { name, email, message, website };
               try {
                 const res = await fetch("/api/save-contact", {
                   method: "POST",
@@ -46,13 +49,16 @@ export default function ContactPage() {
                 });
                 if (res.ok) {
                   setSuccess(true);
+                  trackEvent("contact_form_success");
                   form.reset();
                   timeoutRef.current = setTimeout(() => setSuccess(false), 6000);
                 } else {
                   setError("There was an error. Please try again later.");
+                  trackEvent("contact_form_error", { reason: "non_2xx" });
                 }
               } catch {
                 setError("There was an error. Please try again later.");
+                trackEvent("contact_form_error", { reason: "network" });
               }
             }}>
               <div>
@@ -84,6 +90,18 @@ export default function ContactPage() {
                   placeholder="How can we help you?"
                   required
                 ></textarea>
+              </div>
+              {/* Honeypot: hidden from humans, bots fill it and get silently dropped. */}
+              <div aria-hidden="true" className="hidden">
+                <label>
+                  Website
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </label>
               </div>
               <button
                 type="submit"

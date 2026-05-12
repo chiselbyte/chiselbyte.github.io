@@ -1,23 +1,50 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logoImage from "../assets/images/logo1.png";
 import Link from "next/link";
-import blogData from "@/data/blog.json";
+
+interface ServiceItem {
+  name: string;
+  href: string;
+  description: string;
+}
+
+const serviceItems: ServiceItem[] = [
+  {
+    name: "AI Development",
+    href: "/services/ai-development",
+    description: "Production LLM systems for classification, extraction, decisions.",
+  },
+  {
+    name: "Lending & Fintech",
+    href: "/services/lending",
+    description: "Onboarding, KYC, credit decisioning, disbursement tracking.",
+  },
+  {
+    name: "WhatsApp Business API",
+    href: "/services/whatsapp",
+    description: "Multi-tenant WABA portals via Meta Embedded Signup.",
+  },
+  {
+    name: "Automation (n8n)",
+    href: "/services/automation",
+    description: "Self-hosted n8n flows that replace manual coordination.",
+  },
+];
+
+const primaryLinks = [
+  { name: "Work", href: "/work" },
+  { name: "Writing", href: "/blog" },
+  { name: "How We Build", href: "/how-we-build" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isBlogMobileOpen, setIsBlogMobileOpen] = useState(false);
-  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({});
-
-  const blogItems = blogData.categories;
-
-  const toggleCategory = (name: string) => {
-    setOpenCategories((prev) =>
-      prev[name] ? {} : { [name]: true }
-    );
-  };
+  const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 relative z-50">
@@ -32,69 +59,51 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
+          <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
+              className="text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base"
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
-            >
-              About Us
-            </Link>
+
             <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg cursor-pointer">
-                <span>Blog</span>
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base cursor-pointer">
+                <span>Services</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <div className="absolute left-0 top-full w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
-                {blogItems.map((item) => (
-                  <div key={item.name} className="relative group/item">
-                    <button
-                      type="button"
-                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium"
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
+                <div className="bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-5 py-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors"
                     >
-                      <span>{item.name}</span>
-                      {item.subItems && (
-                        <>
-                          <ChevronRight className="w-3 h-3 ml-1 hidden md:block" />
-                          <ChevronDown className="w-3 h-3 ml-1 md:hidden" />
-                        </>
-                      )}
-                    </button>
-                    {item.subItems && (
-                      <div className="absolute left-full top-0 w-40 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition">
-                        {item.subItems.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      <div className="font-semibold text-gray-900 text-sm">{item.name}</div>
+                      <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
-            <Link
-              href="/contact"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-lg"
-            >
-              Contact Us
-            </Link>
-          </nav>
 
+            {primaryLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-blue-600"
+            className="md:hidden p-2 text-gray-600 hover:text-green-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -104,56 +113,42 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-600 hover:text-blue-600 font-medium">
+              <Link href="/" className="text-gray-700 hover:text-green-600 font-semibold">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-600 hover:text-blue-600 font-medium">
-                About Us
-              </Link>
+
               <button
-                onClick={() => setIsBlogMobileOpen(!isBlogMobileOpen)}
-                className="flex items-center justify-between text-gray-600 hover:text-blue-600 font-medium"
+                onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
+                className="flex items-center justify-between text-gray-700 hover:text-green-600 font-semibold"
               >
-                <span>Blog</span>
+                <span>Services</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${isBlogMobileOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 transition-transform ${isServicesMobileOpen ? "rotate-180" : ""}`}
                 />
               </button>
-              {isBlogMobileOpen && (
-                <div className="pl-4 flex flex-col space-y-2">
-                  {blogItems.map((item) => (
-                    <div key={item.name} className="flex flex-col space-y-1">
-                      <button
-                        onClick={() => toggleCategory(item.name)}
-                        className="flex items-center justify-between text-gray-600 hover:text-blue-600 text-sm"
-                      >
-                        <span>{item.name}</span>
-                        {item.subItems && (
-                          <ChevronDown
-                            className={`w-3 h-3 transition-transform ${openCategories[item.name] ? "rotate-180" : ""}`}
-                          />
-                        )}
-                      </button>
-                      {item.subItems && openCategories[item.name] && (
-                        <div className="pl-4 flex flex-col space-y-1 mt-1">
-                          {item.subItems.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              className="text-gray-600 hover:text-blue-600 text-sm"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+              {isServicesMobileOpen && (
+                <div className="pl-4 flex flex-col space-y-3 border-l-2 border-gray-100">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-gray-600 hover:text-green-600 text-sm font-medium"
+                    >
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               )}
-              <Link href="/contact" className="text-gray-600 hover:text-blue-600 font-medium">
-                Contact Us
-              </Link>
+
+              {primaryLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-700 hover:text-green-600 font-semibold"
+                >
+                  {link.name}
+                </Link>
+              ))}
             </nav>
           </div>
         )}
