@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useRef } from "react";
-import contactImg from "@/../assets/images/contact.jpg";
 import { trackEvent } from "@/lib/analytics";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
@@ -11,6 +9,30 @@ const WEB3FORMS_ACCESS_KEY =
   "6cec701e-93b3-4355-ba10-f0dc0d66ea83";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const NEXT_STEPS = [
+  {
+    title: "A senior engineer reads it",
+    body: "Not a sales filter. The person who replies is the person who would scope the work.",
+  },
+  {
+    title: "You hear back within one business day",
+    body: "Either with questions, or with a straight answer that we're not the right fit.",
+  },
+  {
+    title: "We scope the smallest thing that ships",
+    body: "A milestone you can judge on its own, not a six-month statement of work.",
+  },
+];
+
+/** Mirrors the four service pillars, so a lead arrives already routed. */
+const TOPICS = [
+  "AI / LLM systems",
+  "Lending & fintech",
+  "WhatsApp Business API",
+  "Automation (n8n)",
+  "Something else",
+];
 
 type FieldName = "name" | "email" | "message";
 type FieldErrors = Partial<Record<FieldName, string>>;
@@ -41,21 +63,45 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
-          <div className="mb-8 md:mb-0 relative w-full aspect-[4/5] md:aspect-square">
-            {/* Decorative — the form beside it carries all the meaning. */}
-            <Image
-              src={contactImg}
-              alt=""
-              sizes="(min-width: 768px) 536px, 100vw"
-              className="w-full h-full object-cover rounded-2xl shadow"
-            />
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start px-4">
+          {/*
+            This column used to hold a stock illustration of a smiling person
+            in a headset. It now answers the question people actually have
+            before they type into a stranger's form: what happens after I
+            press send.
+          */}
+          <div className="mb-8 md:mb-0">
+            <h2 className="text-sm font-semibold tracking-widest uppercase text-green-700 mb-6">
+              What happens next
+            </h2>
+            <ol className="space-y-6">
+              {NEXT_STEPS.map((step, index) => (
+                <li key={step.title} className="flex gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-semibold flex items-center justify-center"
+                  >
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">{step.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
           <div className="bg-white rounded-2xl shadow p-8 w-full">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">Contact Us</h1>
-            <p className="text-gray-600 mb-8 text-center text-sm sm:text-base">
-              We'd love to hear from you! Fill out the form below or email us at{" "}
-              <a href="mailto:info@chiselbyte.com" className="text-green-700 font-medium">info@chiselbyte.com</a>.
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Tell us what you're trying to ship.
+            </h1>
+            <p className="text-gray-600 mb-8 text-sm sm:text-base leading-relaxed">
+              We reply within one business day. If we're not the right fit, we'll say so
+              rather than sell you a project. Prefer email?{" "}
+              <a href="mailto:info@chiselbyte.com" className="text-green-700 font-medium underline">
+                info@chiselbyte.com
+              </a>
+              .
             </p>
             <form
               ref={formRef}
@@ -72,6 +118,7 @@ export default function ContactPage() {
                 const name = (form.elements.namedItem("name") as HTMLInputElement)?.value.trim() || "";
                 const email = (form.elements.namedItem("email") as HTMLInputElement)?.value.trim() || "";
                 const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value.trim() || "";
+                const topic = (form.elements.namedItem("topic") as HTMLSelectElement)?.value || "Not specified";
                 // Honeypot — bots tick this; humans never see it.
                 // NOTE: read `.checked`, not `.value`. A checkbox's `value` is the
                 // string "on" whether or not it is ticked, so testing `.value`
@@ -111,11 +158,12 @@ export default function ContactPage() {
                     },
                     body: JSON.stringify({
                       access_key: WEB3FORMS_ACCESS_KEY,
-                      subject: `New contact form submission from ${name}`,
+                      subject: `New enquiry (${topic}) from ${name}`,
                       from_name: "Chiselbyte contact form",
                       replyto: email,
                       name,
                       email,
+                      topic,
                       message,
                       botcheck: "",
                     }),
@@ -187,20 +235,41 @@ export default function ContactPage() {
                 )}
               </div>
               <div>
+                <label htmlFor="contact-topic" className="block text-gray-700 font-medium mb-1 text-sm">
+                  What's it about?{" "}
+                  <span className="font-normal text-gray-500">(optional)</span>
+                </label>
+                <select id="contact-topic" name="topic" className={inputClasses} defaultValue="">
+                  <option value="">Not sure yet</option>
+                  {TOPICS.map((topic) => (
+                    <option key={topic} value={topic}>
+                      {topic}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
                 <label htmlFor="contact-message" className="block text-gray-700 font-medium mb-1 text-sm">
-                  Message
+                  What are you trying to build?
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   className={fieldErrors.message ? inputErrorClasses : inputClasses}
                   rows={5}
-                  placeholder="How can we help you?"
+                  placeholder="The problem, roughly where it sits today, and what shipping would look like. Rough is fine — we'll ask the rest."
                   required
                   maxLength={5000}
                   aria-invalid={fieldErrors.message ? true : undefined}
-                  aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
+                  aria-describedby={
+                    fieldErrors.message ? "contact-message-error" : "contact-message-hint"
+                  }
                 ></textarea>
+                {!fieldErrors.message && (
+                  <p id="contact-message-hint" className="mt-1 text-xs text-gray-500">
+                    Scoped problems get better answers than "we want to use AI."
+                  </p>
+                )}
                 {fieldErrors.message && (
                   <p id="contact-message-error" className="mt-1 text-sm text-red-700">
                     {fieldErrors.message}

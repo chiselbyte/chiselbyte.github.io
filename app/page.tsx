@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
+import ProofBand from '@/components/ProofBand';
 import PillarsSection from '@/components/PillarsSection';
 import SelectedWorkSection from '@/components/SelectedWorkSection';
 import HowWeBuildSection from '@/components/HowWeBuildSection';
@@ -24,6 +25,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <HeroSection />
+      <ProofBand />
       <PillarsSection />
       <SelectedWorkSection />
       <HowWeBuildSection />

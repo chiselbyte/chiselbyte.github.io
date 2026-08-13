@@ -11,8 +11,8 @@ export default function ReadyToTalkSection() {
         <div className="absolute top-40 right-40 w-2 h-2 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-32 left-32 w-4 h-4 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-20 right-20 w-3 h-3 bg-green-400 rounded-full"></div>
-        <div className="absolute top-60 right-80 w-2 h-2 bg-purple-400 rounded-full"></div>
-        <div className="absolute bottom-60 left-80 w-3 h-3 bg-purple-400 rounded-full"></div>
+        <div className="absolute top-60 right-80 w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="absolute bottom-60 left-80 w-3 h-3 bg-gray-300 rounded-full"></div>
       </div>
 
       <div className="py-10 sm:py-16 md:py-20">

@@ -81,7 +81,7 @@ export default function BlogPostPage({ params }: { params: { category: string; s
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
           <div className="absolute top-20 right-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full opacity-80"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gray-200 rounded-full opacity-60"></div>
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link

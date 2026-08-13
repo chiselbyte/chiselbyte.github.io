@@ -86,7 +86,7 @@ export default function HowWeBuildPage() {
           <div className="absolute top-20 right-20 w-3 h-3 bg-green-400 rounded-full opacity-60"></div>
           <div className="absolute top-40 left-40 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
           <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full opacity-60"></div>
-          <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400 rounded-full opacity-60"></div>
+          <div className="absolute bottom-20 left-20 w-3 h-3 bg-gray-300 rounded-full opacity-60"></div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center space-x-3 mb-4">

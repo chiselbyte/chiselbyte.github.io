@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { trackEvent } from "@/lib/analytics";
-import image from "../assets/images/image1.jpg";
+import HeroPipelineDiagram from "@/components/diagrams/HeroPipelineDiagram";
 
 export default function HeroSection() {
   return (
@@ -16,16 +15,16 @@ export default function HeroSection() {
         <div className="absolute bottom-40 left-40 w-5 h-5 border-2 border-green-400 rotate-45"></div>
 
         {/* Circles */}
-        <div className="absolute top-40 left-10 w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full opacity-80"></div>
-        <div className="absolute bottom-20 right-20 w-12 h-12 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full opacity-80"></div>
+        <div className="absolute top-40 left-10 w-16 h-16 bg-gray-200 rounded-full opacity-60"></div>
+        <div className="absolute bottom-20 right-20 w-12 h-12 bg-gray-200 rounded-full opacity-60"></div>
 
         {/* X shapes */}
         <div className="absolute top-24 right-20 text-green-400 text-2xl font-bold">×</div>
         <div className="absolute bottom-32 left-20 text-green-400 text-xl font-bold">×</div>
 
         {/* Additional decorative elements */}
-        <div className="absolute top-60 right-60 w-8 h-8 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-60"></div>
-        <div className="absolute bottom-60 right-80 w-6 h-6 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-full opacity-60"></div>
+        <div className="absolute top-60 right-60 w-8 h-8 bg-gray-200 rounded-full opacity-50"></div>
+        <div className="absolute bottom-60 right-80 w-6 h-6 bg-gray-200 rounded-full opacity-50"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex items-center">
@@ -62,21 +61,10 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right illustration */}
+          {/* Right: the actual thing we build, not a picture of one */}
           <div className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
-            <div className="relative w-full max-w-[16rem] sm:max-w-xs md:max-w-md lg:max-w-2xl">
-              {/*
-                Decorative brand image — alt="" so screen readers skip it instead
-                of announcing "Chiselbyte Hero". The static import supplies
-                intrinsic dimensions, which keeps this out of the CLS budget.
-              */}
-              <Image
-                src={image}
-                alt=""
-                priority
-                sizes="(min-width: 1024px) 448px, (min-width: 768px) 288px, (min-width: 640px) 224px, 160px"
-                className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-2xl shadow-2xl object-contain mx-auto"
-              />
+            <div className="relative w-full max-w-md lg:max-w-lg">
+              <HeroPipelineDiagram />
             </div>
           </div>
         </div>

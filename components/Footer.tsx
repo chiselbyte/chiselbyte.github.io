@@ -38,15 +38,15 @@ const socialIcons = [
     icon: Instagram,
     label: "Chiselbyte on Instagram",
     href: "https://www.instagram.com/chiselbyte/",
-    color: "text-pink-500 hover:text-pink-600",
-    bg: "hover:bg-pink-50",
+    color: "text-gray-600 hover:text-gray-900",
+    bg: "hover:bg-gray-50",
   },
   {
     icon: Linkedin,
     label: "Chiselbyte on LinkedIn",
     href: "https://in.linkedin.com/in/chisel-byte-b55817367",
-    color: "text-blue-700 hover:text-blue-800",
-    bg: "hover:bg-blue-50",
+    color: "text-gray-600 hover:text-gray-900",
+    bg: "hover:bg-gray-50",
   },
 ];
 
@@ -57,9 +57,9 @@ export default function Footer() {
         <div className="absolute top-20 right-20 text-green-400 text-2xl font-bold">×</div>
         <div className="absolute top-40 left-20 w-0 h-0 border-l-4 border-r-4 border-b-[6px] border-transparent border-b-green-400"></div>
         <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full"></div>
-        <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400 rounded-full"></div>
-        <div className="absolute top-60 left-80 w-2 h-2 bg-purple-400 rounded-full"></div>
-        <div className="absolute bottom-60 right-80 w-3 h-3 bg-orange-400 rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-3 h-3 bg-gray-300 rounded-full"></div>
+        <div className="absolute top-60 left-80 w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="absolute bottom-60 right-80 w-3 h-3 bg-gray-300 rounded-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -74,8 +74,6 @@ export default function Footer() {
               <p className="text-gray-600 leading-relaxed lg:max-w-md">
                 Chiselbyte is a small senior team building production LLM systems, lending platforms, WhatsApp portals, and n8n automations. Pune, India.
               </p>
-
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full opacity-80"></div>
             </div>
 
             {footerGroups.map((group) => (
