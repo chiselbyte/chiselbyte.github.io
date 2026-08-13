@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
-import logoImage from '@/assets/images/logo.png';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -76,7 +75,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href={logoImage.src} />
+        {/* Favicons come from app/icon.png + app/apple-icon.png (file-based
+            metadata). Previously this pointed at the 1024x1024, 1.2 MB
+            assets/images/logo.png, which every page load had to download. */}
         {plausibleDomain ? (
           <Script
             defer

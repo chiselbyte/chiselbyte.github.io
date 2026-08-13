@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { trackEvent } from "@/lib/analytics";
 import image from "../assets/images/image1.jpg";
 
@@ -8,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-8 sm:py-12 md:py-20 flex relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Triangles */}
         <div className="absolute top-20 left-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
         <div className="absolute top-32 right-40 w-4 h-4 border-2 border-green-400 rotate-45"></div>
@@ -35,7 +36,7 @@ export default function HeroSection() {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 We build production LLM systems.
                 <br />
-                <span className="text-green-600">Not chatbots.</span>
+                <span className="text-green-700">Not chatbots.</span>
               </h1>
 
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
@@ -64,10 +65,16 @@ export default function HeroSection() {
           {/* Right illustration */}
           <div className="relative flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="relative w-full max-w-[16rem] sm:max-w-xs md:max-w-md lg:max-w-2xl">
-              {/* Responsive static image */}
-              <img
-                src={image.src}
-                alt="ChiselByte Hero"
+              {/*
+                Decorative brand image — alt="" so screen readers skip it instead
+                of announcing "Chiselbyte Hero". The static import supplies
+                intrinsic dimensions, which keeps this out of the CLS budget.
+              */}
+              <Image
+                src={image}
+                alt=""
+                priority
+                sizes="(min-width: 1024px) 448px, (min-width: 768px) 288px, (min-width: 640px) 224px, 160px"
                 className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-2xl shadow-2xl object-contain mx-auto"
               />
             </div>

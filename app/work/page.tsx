@@ -35,7 +35,7 @@ export default function WorkIndexPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-green-600">
+            <span className="text-sm font-semibold tracking-widest uppercase text-green-700">
               Work
             </span>
             <div className="w-8 h-1 bg-green-500 rounded-full"></div>
@@ -107,7 +107,7 @@ export default function WorkIndexPage() {
                     ))}
                   </div>
 
-                  <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-600 transition-colors">
+                  <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                     Read case study
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>

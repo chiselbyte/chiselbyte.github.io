@@ -46,7 +46,7 @@ export default function TechStackSection() {
               key={group.category}
               className="bg-gray-50 border border-gray-100 rounded-2xl p-6 sm:p-8"
             >
-              <h3 className="text-sm font-semibold tracking-wider uppercase text-green-600 mb-4">
+              <h3 className="text-sm font-semibold tracking-wider uppercase text-green-700 mb-4">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">

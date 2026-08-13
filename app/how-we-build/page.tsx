@@ -115,7 +115,7 @@ export default function HowWeBuildPage() {
           {principles.map((principle) => (
             <div key={principle.number}>
               <div className="flex items-start gap-4 sm:gap-6 mb-6">
-                <span className="text-2xl sm:text-3xl font-bold text-green-500 font-mono flex-shrink-0">
+                <span className="text-2xl sm:text-3xl font-bold text-green-700 font-mono flex-shrink-0">
                   {principle.number}
                 </span>
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-tight pt-1">
@@ -134,7 +134,7 @@ export default function HowWeBuildPage() {
                   <div className="pt-2">
                     <Link
                       href={principle.inAction.href}
-                      className="inline-flex items-center text-sm font-semibold text-green-600 hover:text-green-700 transition-colors"
+                      className="inline-flex items-center text-sm font-semibold text-green-700 hover:text-green-700 transition-colors"
                     >
                       {principle.inAction.label}
                       <ArrowRight className="w-4 h-4 ml-1" />

@@ -55,7 +55,7 @@ const pillars: Pillar[] = [
       "Next.js + Express portal infrastructure",
     ],
     href: "/services/whatsapp",
-    iconColor: "text-green-600",
+    iconColor: "text-green-700",
     iconBg: "bg-green-50",
   },
   {
@@ -117,13 +117,13 @@ export default function PillarsSection() {
                   <ul className="space-y-2 pt-2">
                     {pillar.capabilities.map((capability) => (
                       <li key={capability} className="flex items-start space-x-2 text-xs sm:text-sm text-gray-700">
-                        <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+                        <span className="text-green-700 mt-1 flex-shrink-0">→</span>
                         <span>{capability}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-600 transition-colors">
+                  <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                     Read more
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>

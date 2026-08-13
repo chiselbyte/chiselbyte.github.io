@@ -38,12 +38,14 @@ const footerGroups: FooterGroup[] = [
 const socialIcons = [
   {
     icon: Instagram,
+    label: "Chiselbyte on Instagram",
     href: "https://www.instagram.com/chiselbyte/",
     color: "text-pink-500 hover:text-pink-600",
     bg: "hover:bg-pink-50",
   },
   {
     icon: Linkedin,
+    label: "Chiselbyte on LinkedIn",
     href: "https://in.linkedin.com/in/chisel-byte-b55817367",
     color: "text-blue-700 hover:text-blue-800",
     bg: "hover:bg-blue-50",
@@ -68,7 +70,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="space-y-6 sm:col-span-2 lg:col-span-2">
               <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-900">ChiselByte</span>
+                <span className="text-2xl font-bold text-gray-900">Chiselbyte</span>
               </div>
 
               <p className="text-gray-600 leading-relaxed lg:max-w-md">
@@ -88,7 +90,7 @@ export default function Footer() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="block text-gray-600 hover:text-green-600 transition-colors duration-200 text-sm"
+                      className="block text-gray-600 hover:text-green-700 transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </Link>
@@ -109,7 +111,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-gray-400 flex-shrink-0" />
                 <a
                   href="mailto:info@chiselbyte.com"
-                  className="hover:text-green-600 transition-colors"
+                  className="hover:text-green-700 transition-colors"
                 >
                   info@chiselbyte.com
                 </a>
@@ -117,17 +119,18 @@ export default function Footer() {
             </div>
 
             <div className="flex space-x-3">
-              {socialIcons.map((social, index) => {
+              {socialIcons.map((social) => {
                 const Icon = social.icon;
                 return (
                   <a
-                    key={index}
+                    key={social.href}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200`}
+                    aria-label={`${social.label} (opens in a new tab)`}
+                    className={`w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center ${social.bg} transition-all duration-200`}
                   >
-                    <Icon className={`w-5 h-5 ${social.color}`} />
+                    <Icon aria-hidden="true" className={`w-5 h-5 ${social.color}`} />
                   </a>
                 );
               })}
@@ -138,7 +141,7 @@ export default function Footer() {
         <div className="border-t border-gray-100 py-4 sm:py-6">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0">
             <div className="text-gray-500 text-center text-xs sm:text-sm">
-              <p>Copyright © {new Date().getFullYear()} ChiselByte Softwares</p>
+              <p>Copyright © {new Date().getFullYear()} Chiselbyte Softwares</p>
             </div>
           </div>
         </div>

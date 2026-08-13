@@ -75,7 +75,7 @@ export default function PillarPageLayout({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-green-600">
+            <span className="text-sm font-semibold tracking-widest uppercase text-green-700">
               {eyebrow}
             </span>
             <div className="w-8 h-1 bg-green-500 rounded-full"></div>
@@ -104,7 +104,7 @@ export default function PillarPageLayout({
         <ul className="space-y-3">
           {whatWeBuild.map((item) => (
             <li key={item} className="flex items-start space-x-3 text-sm sm:text-base text-gray-700">
-              <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+              <span className="text-green-700 mt-1 flex-shrink-0">→</span>
               <span>{item}</span>
             </li>
           ))}
@@ -135,7 +135,7 @@ export default function PillarPageLayout({
           <ol className="space-y-6">
             {howItWorks.steps.map((step, idx) => (
               <li key={step.label} className="flex items-start gap-4 sm:gap-6">
-                <span className="text-xl sm:text-2xl font-bold text-green-500 font-mono flex-shrink-0 w-10 text-right">
+                <span className="text-xl sm:text-2xl font-bold text-green-700 font-mono flex-shrink-0 w-10 text-right">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -169,7 +169,7 @@ export default function PillarPageLayout({
                   key={b}
                   className="flex items-start space-x-3 text-sm sm:text-base text-gray-700"
                 >
-                  <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+                  <span className="text-green-700 mt-1 flex-shrink-0">→</span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -228,7 +228,7 @@ export default function PillarPageLayout({
                   </span>
                 ))}
               </div>
-              <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-600 transition-colors">
+              <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                 Read case study
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </div>

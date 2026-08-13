@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="mb-12 sm:mb-16">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-green-600">
+            <span className="text-sm font-semibold tracking-widest uppercase text-green-700">
               About
             </span>
             <div className="w-8 h-1 bg-green-500 rounded-full"></div>
@@ -41,22 +41,22 @@ export default function AboutPage() {
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">What we believe</h2>
             <ul className="space-y-3 text-sm sm:text-base text-gray-700">
               <li className="flex items-start space-x-3">
-                <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+                <span className="text-green-700 mt-1 flex-shrink-0">→</span>
                 <span><strong className="text-gray-900">Smallest stack that survives production.</strong> Postgres, one deployable, n8n. Change one thing at a time when it breaks.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+                <span className="text-green-700 mt-1 flex-shrink-0">→</span>
                 <span><strong className="text-gray-900">Schemas over vibes.</strong> Especially with LLMs. If a feature can't be unit-tested, it isn't a feature yet.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <span className="text-green-500 mt-1 flex-shrink-0">→</span>
+                <span className="text-green-700 mt-1 flex-shrink-0">→</span>
                 <span><strong className="text-gray-900">Ship the scoped win first.</strong> Every relationship starts with a 1-2 week deliverable. After that, monthly support is a yes.</span>
               </li>
             </ul>
             <div className="mt-6">
               <Link
                 href="/how-we-build"
-                className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-600 transition-colors"
+                className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-700 transition-colors"
               >
                 Read the full manifesto
                 <ArrowRight className="w-4 h-4 ml-1" />

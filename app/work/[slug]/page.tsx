@@ -61,7 +61,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <Header />
         <section className="py-20 text-center max-w-2xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Case study not found</h1>
-          <Link href="/work" className="text-green-600 font-semibold hover:text-green-700">
+          <Link href="/work" className="text-green-700 font-semibold hover:text-green-700">
             ← Back to all work
           </Link>
         </section>
@@ -95,7 +95,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link
             href="/work"
-            className="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-green-600 transition-colors mb-6"
+            className="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-green-700 transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             All work
@@ -148,7 +148,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       {/* Body */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
         <article
-          className="prose prose-base max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-3 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2 prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-green-600 prose-a:no-underline hover:prose-a:underline prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-gray-900 prose-pre:text-gray-100"
+          className="prose prose-base max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-3 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2 prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-green-700 prose-a:no-underline hover:prose-a:underline prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-gray-900 prose-pre:text-gray-100"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </section>

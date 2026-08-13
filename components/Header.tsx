@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import logoImage from "../assets/images/logo1.png";
 import Link from "next/link";
 
@@ -44,7 +45,32 @@ const primaryLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const servicesButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Close the desktop dropdown on a click anywhere outside it.
+  useEffect(() => {
+    if (!isServicesOpen) return;
+    function onPointerDown(event: MouseEvent | TouchEvent) {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [isServicesOpen]);
+
+  function closeAllMenus() {
+    setIsServicesOpen(false);
+    setIsServicesMobileOpen(false);
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 relative z-50">
@@ -52,32 +78,67 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <img src={logoImage.src} alt="Chiselbyte" className="h-24 cursor-pointer" />
-              <span className="text-xl font-semibold text-gray-800">ChiselByte</span>
+            <Link href="/" className="flex items-center gap-2" onClick={closeAllMenus}>
+              {/* Decorative: the wordmark beside it already names the brand. */}
+              <Image src={logoImage} alt="" width={40} height={40} priority className="h-10 w-10" />
+              <span className="text-xl font-semibold text-gray-800">Chiselbyte</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-8">
+          <nav
+            aria-label="Main"
+            className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-8"
+          >
             <Link
               href="/"
-              className="text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base"
+              className="text-gray-700 hover:text-green-700 transition-colors font-semibold text-sm lg:text-base"
             >
               Home
             </Link>
 
-            <div className="relative group">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base cursor-pointer">
+            <div
+              ref={servicesRef}
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                  setIsServicesOpen(false);
+                }
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Escape" && isServicesOpen) {
+                  setIsServicesOpen(false);
+                  servicesButtonRef.current?.focus();
+                }
+              }}
+            >
+              <button
+                ref={servicesButtonRef}
+                type="button"
+                aria-expanded={isServicesOpen}
+                aria-controls="services-menu"
+                onClick={() => setIsServicesOpen((open) => !open)}
+                className="flex items-center space-x-1 text-gray-700 hover:text-green-700 transition-colors font-semibold text-sm lg:text-base cursor-pointer"
+              >
                 <span>Services</span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown
+                  aria-hidden="true"
+                  className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-60">
+              <div
+                id="services-menu"
+                hidden={!isServicesOpen}
+                className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80"
+              >
                 <div className="bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
                   {serviceItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={closeAllMenus}
                       className="block px-5 py-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors"
                     >
                       <div className="font-semibold text-gray-900 text-sm">{item.name}</div>
@@ -92,7 +153,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-green-600 transition-colors font-semibold text-sm lg:text-base"
+                className="text-gray-700 hover:text-green-700 transition-colors font-semibold text-sm lg:text-base"
               >
                 {link.name}
               </Link>
@@ -101,38 +162,57 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-green-600"
+            type="button"
+            className="md:hidden p-2 text-gray-600 hover:text-green-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X aria-hidden="true" className="w-6 h-6" />
+            ) : (
+              <Menu aria-hidden="true" className="w-6 h-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-700 hover:text-green-600 font-semibold">
+          <div id="mobile-menu" className="md:hidden border-t border-gray-200 py-4">
+            <nav aria-label="Main" className="flex flex-col space-y-4">
+              <Link
+                href="/"
+                onClick={closeAllMenus}
+                className="text-gray-700 hover:text-green-700 font-semibold"
+              >
                 Home
               </Link>
 
               <button
+                type="button"
                 onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
-                className="flex items-center justify-between text-gray-700 hover:text-green-600 font-semibold"
+                aria-expanded={isServicesMobileOpen}
+                aria-controls="mobile-services-menu"
+                className="flex items-center justify-between text-gray-700 hover:text-green-700 font-semibold"
               >
                 <span>Services</span>
                 <ChevronDown
+                  aria-hidden="true"
                   className={`w-4 h-4 transition-transform ${isServicesMobileOpen ? "rotate-180" : ""}`}
                 />
               </button>
               {isServicesMobileOpen && (
-                <div className="pl-4 flex flex-col space-y-3 border-l-2 border-gray-100">
+                <div
+                  id="mobile-services-menu"
+                  className="pl-4 flex flex-col space-y-3 border-l-2 border-gray-100"
+                >
                   {serviceItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-gray-600 hover:text-green-600 text-sm font-medium"
+                      onClick={closeAllMenus}
+                      className="text-gray-600 hover:text-green-700 text-sm font-medium"
                     >
                       {item.name}
                     </Link>
@@ -144,7 +224,8 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-green-600 font-semibold"
+                  onClick={closeAllMenus}
+                  className="text-gray-700 hover:text-green-700 font-semibold"
                 >
                   {link.name}
                 </Link>

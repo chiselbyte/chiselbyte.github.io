@@ -54,7 +54,7 @@ export default function WritingSection() {
               className="group bg-white border border-gray-200 hover:border-gray-300 rounded-2xl p-6 sm:p-7 hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold tracking-wide uppercase text-green-600">
+                <span className="text-xs font-semibold tracking-wide uppercase text-green-700">
                   {post.categoryName}
                 </span>
                 <span className="text-xs text-gray-500">{post.date}</span>
@@ -68,7 +68,7 @@ export default function WritingSection() {
                 {post.description}
               </p>
 
-              <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-600 transition-colors">
+              <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-700 transition-colors">
                 Read
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -80,7 +80,7 @@ export default function WritingSection() {
           <Link
             href="/blog"
             onClick={() => trackEvent("cta_all_writing", { location: "writing_section" })}
-            className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-600 transition-colors"
+            className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-700 transition-colors"
           >
             All writing
             <ArrowRight className="w-4 h-4 ml-1" />

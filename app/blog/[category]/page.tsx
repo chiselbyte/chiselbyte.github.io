@@ -17,7 +17,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
         <Header />
         <section className="py-20 text-center max-w-2xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Category not found</h1>
-          <Link href="/blog" className="text-green-600 font-semibold hover:text-green-700">
+          <Link href="/blog" className="text-green-700 font-semibold hover:text-green-700">
             ← Back to all writing
           </Link>
         </section>
@@ -42,7 +42,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-green-600 transition-colors mb-6"
+            className="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-green-700 transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
             All writing
@@ -50,7 +50,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
 
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-green-600">
+            <span className="text-sm font-semibold tracking-widest uppercase text-green-700">
               {category.name}
             </span>
             <div className="w-8 h-1 bg-green-500 rounded-full"></div>
@@ -76,7 +76,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
             </p>
             <Link
               href="/blog"
-              className="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors"
+              className="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-green-700 transition-colors"
             >
               Read what we have published
               <ArrowRight className="w-4 h-4 ml-1" />
@@ -91,7 +91,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
                 className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 sm:p-7 hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold tracking-wide uppercase text-green-600">
+                  <span className="text-xs font-semibold tracking-wide uppercase text-green-700">
                     {category.name}
                   </span>
                   <span className="text-xs text-gray-500">{post.date}</span>
@@ -105,7 +105,7 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
                   {post.description}
                 </p>
 
-                <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-600 transition-colors">
+                <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-700 transition-colors">
                   Read
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>

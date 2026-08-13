@@ -61,7 +61,7 @@ export default function SelectedWorkSection() {
                   ))}
                 </div>
 
-                <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-600 transition-colors">
+                <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                   Read case study
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -74,7 +74,7 @@ export default function SelectedWorkSection() {
           <Link
             href="/work"
             onClick={() => trackEvent("cta_see_our_work", { location: "selected_work_section" })}
-            className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-600 transition-colors"
+            className="inline-flex items-center text-base font-semibold text-gray-900 hover:text-green-700 transition-colors"
           >
             See all work
             <ArrowRight className="w-4 h-4 ml-1" />

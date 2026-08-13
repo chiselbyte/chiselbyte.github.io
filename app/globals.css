@@ -79,4 +79,21 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /*
+   * Global keyboard focus indicator.
+   * Every interactive control gets a visible ring when reached by keyboard,
+   * so individual components don't each have to remember one. Uses
+   * green-700 (#15803d, 5.0:1 on white) rather than the green-600 accent,
+   * which only reaches 3.3:1.
+   */
+  :where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex='-1'])):focus-visible {
+    outline: 2px solid #15803d;
+    outline-offset: 2px;
+  }
+
+  /* Dark sections invert the ring so it stays visible on gray-900. */
+  :where(.bg-gray-900) :where(a, button, [tabindex]:not([tabindex='-1'])):focus-visible {
+    outline-color: #4ade80;
+  }
 }

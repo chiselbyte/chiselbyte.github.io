@@ -54,7 +54,7 @@ export default function BlogIndexPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-semibold tracking-widest uppercase text-green-600">
+            <span className="text-sm font-semibold tracking-widest uppercase text-green-700">
               Writing
             </span>
             <div className="w-8 h-1 bg-green-500 rounded-full"></div>
@@ -96,7 +96,7 @@ export default function BlogIndexPage() {
                 className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 sm:p-7 hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold tracking-wide uppercase text-green-600">
+                  <span className="text-xs font-semibold tracking-wide uppercase text-green-700">
                     {post.categoryName}
                   </span>
                   <span className="text-xs text-gray-500">{post.date}</span>
@@ -110,7 +110,7 @@ export default function BlogIndexPage() {
                   {post.description}
                 </p>
 
-                <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-600 transition-colors">
+                <div className="flex items-center text-sm font-semibold text-gray-900 pt-4 group-hover:text-green-700 transition-colors">
                   Read
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
