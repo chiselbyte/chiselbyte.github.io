@@ -3,8 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import workData from "@/data/work.json";
 
 const pillarColorMap: Record<string, string> = {
@@ -25,8 +23,6 @@ export default function WorkIndexPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
           <div className="absolute top-20 right-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
@@ -117,8 +113,6 @@ export default function WorkIndexPage() {
           </div>
         )}
       </section>
-
-      <Footer />
     </main>
   );
 }

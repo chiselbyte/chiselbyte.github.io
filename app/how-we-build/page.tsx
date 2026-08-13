@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 import type { Metadata } from "next";
 
@@ -82,8 +80,6 @@ const principles: Principle[] = [
 export default function HowWeBuildPage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       {/* Hero */}
       <section className="relative bg-gray-900 text-white py-12 sm:py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
@@ -172,8 +168,6 @@ export default function HowWeBuildPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

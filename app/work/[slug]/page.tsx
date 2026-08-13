@@ -4,8 +4,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { marked } from "marked";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import workData from "@/data/work.json";
 import LeadQualificationDiagram from "@/components/diagrams/LeadQualificationDiagram";
 
@@ -58,14 +56,12 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   if (!study) {
     return (
       <main className="min-h-screen bg-white">
-        <Header />
         <section className="py-20 text-center max-w-2xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Case study not found</h1>
           <Link href="/work" className="text-green-700 font-semibold hover:text-green-700">
             ← Back to all work
           </Link>
         </section>
-        <Footer />
       </main>
     );
   }
@@ -84,8 +80,6 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       {/* Header */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
@@ -179,8 +173,6 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

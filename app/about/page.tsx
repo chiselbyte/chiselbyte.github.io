@@ -1,15 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="mb-12 sm:mb-16">
           <div className="flex items-center space-x-3 mb-4">
@@ -113,8 +109,6 @@ export default function AboutPage() {
           </section>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

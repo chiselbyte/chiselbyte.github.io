@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import PillarsSection from '@/components/PillarsSection';
 import SelectedWorkSection from '@/components/SelectedWorkSection';
@@ -7,7 +6,6 @@ import HowWeBuildSection from '@/components/HowWeBuildSection';
 import TechStackSection from '@/components/TechStackSection';
 import WritingSection from '@/components/WritingSection';
 import ReadyToTalkSection from '@/components/ReadyToTalkSection';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Chiselbyte — Production LLM systems. Not chatbots.',
@@ -25,7 +23,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <HeroSection />
       <PillarsSection />
       <SelectedWorkSection />
@@ -33,7 +30,6 @@ export default function Home() {
       <TechStackSection />
       <WritingSection />
       <ReadyToTalkSection />
-      <Footer />
     </main>
   );
 }

@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import contactImg from "@/../assets/images/contact.jpg";
@@ -42,7 +40,6 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4">
           <div className="mb-8 md:mb-0 relative w-full aspect-[4/5] md:aspect-square">
@@ -247,7 +244,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

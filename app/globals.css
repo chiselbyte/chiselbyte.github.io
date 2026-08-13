@@ -76,6 +76,15 @@
   * {
     @apply border-border;
   }
+
+  /*
+   * The header is sticky and 5rem tall. Without this, jumping to an in-page
+   * anchor (or to #main-content via the skip link) scrolls the target under
+   * the bar — WCAG 2.4.11 Focus Not Obscured.
+   */
+  html {
+    scroll-padding-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground;
   }

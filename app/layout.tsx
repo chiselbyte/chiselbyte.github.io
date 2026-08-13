@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -92,7 +94,26 @@ export default function RootLayout({
           </Script>
         ) : null}
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/*
+          Skip link: first thing in the tab order, invisible until focused.
+          Without it, every keyboard user pays the full nav (11 links plus the
+          Services disclosure) on every single page before reaching content.
+        */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-gray-900 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        {/* tabIndex={-1} makes this a programmatic focus target so the skip
+            link actually moves focus, not just the scroll position. */}
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

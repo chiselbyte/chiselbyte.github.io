@@ -3,8 +3,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { trackEvent } from "@/lib/analytics";
 
 interface ExtraSection {
@@ -64,8 +62,6 @@ export default function PillarPageLayout({
 }: PillarPageLayoutProps) {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
@@ -290,8 +286,6 @@ export default function PillarPageLayout({
           </Link>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

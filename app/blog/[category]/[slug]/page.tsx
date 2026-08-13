@@ -4,8 +4,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { marked } from "marked";
 import { ArrowLeft } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import blogData from "@/data/blog.json";
 
 export async function generateStaticParams() {
@@ -56,14 +54,12 @@ export default function BlogPostPage({ params }: { params: { category: string; s
   if (!category || !post) {
     return (
       <main className="min-h-screen bg-white">
-        <Header />
         <section className="py-20 text-center max-w-2xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Post not found</h1>
           <Link href="/blog" className="text-green-700 font-semibold hover:text-green-700">
             ← Back to all writing
           </Link>
         </section>
-        <Footer />
       </main>
     );
   }
@@ -81,8 +77,6 @@ export default function BlogPostPage({ params }: { params: { category: string; s
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       {/* Header */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
@@ -156,8 +150,6 @@ export default function BlogPostPage({ params }: { params: { category: string; s
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

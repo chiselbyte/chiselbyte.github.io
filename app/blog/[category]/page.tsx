@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import blogData from "@/data/blog.json";
 
 export async function generateStaticParams() {
@@ -14,14 +12,12 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
   if (!category) {
     return (
       <main className="min-h-screen bg-white">
-        <Header />
         <section className="py-20 text-center max-w-2xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Category not found</h1>
           <Link href="/blog" className="text-green-700 font-semibold hover:text-green-700">
             ← Back to all writing
           </Link>
         </section>
-        <Footer />
       </main>
     );
   }
@@ -32,8 +28,6 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block">
           <div className="absolute top-20 right-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
@@ -114,8 +108,6 @@ export default function BlogCategoryPage({ params }: { params: { category: strin
           </div>
         )}
       </section>
-
-      <Footer />
     </main>
   );
 }
