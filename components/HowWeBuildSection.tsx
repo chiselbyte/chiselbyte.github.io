@@ -41,7 +41,7 @@ const principles: Principle[] = [
 export default function HowWeBuildSection() {
   return (
     <section className="relative py-12 sm:py-16 md:py-24 bg-gray-900 text-white overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none hidden sm:block">
+      <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
         <div className="absolute top-20 right-20 w-3 h-3 bg-green-400 rounded-full opacity-60"></div>
         <div className="absolute top-40 left-40 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
         <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full opacity-60"></div>

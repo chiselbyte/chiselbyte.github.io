@@ -6,7 +6,7 @@ import { trackEvent } from '@/lib/analytics';
 export default function ReadyToTalkSection() {
   return (
     <section className="bg-gradient-to-br from-green-300 via-green-200 to-blue-400 relative overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>
         <div className="absolute top-40 right-40 w-2 h-2 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-32 left-32 w-4 h-4 bg-green-400 rounded-full"></div>
@@ -32,7 +32,7 @@ export default function ReadyToTalkSection() {
               <Link
                 href="/contact"
                 onClick={() => trackEvent("cta_start_project", { location: "ready_to_talk" })}
-                className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 motion-safe:transform motion-safe:hover:scale-105"
               >
                 Start a project
               </Link>

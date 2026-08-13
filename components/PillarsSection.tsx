@@ -77,7 +77,7 @@ const pillars: Pillar[] = [
 export default function PillarsSection() {
   return (
     <section id="services" className="relative py-12 sm:py-16 md:py-24 bg-white">
-      <div className="absolute inset-0 pointer-events-none hidden sm:block">
+      <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
         <div className="absolute top-20 left-20 w-3 h-3 bg-green-400 rounded-full"></div>
         <div className="absolute top-40 right-40 w-2 h-2 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-32 left-32 w-4 h-4 bg-green-400 rounded-full"></div>
@@ -125,7 +125,7 @@ export default function PillarsSection() {
 
                   <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                     Read more
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 ml-1 motion-safe:group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>

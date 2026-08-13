@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Instagram,
   Linkedin,
@@ -55,9 +53,9 @@ const socialIcons = [
 export default function Footer() {
   return (
     <footer className="bg-white relative overflow-hidden border-t border-gray-100">
-      <div className="absolute inset-0 hidden sm:block pointer-events-none">
+      <div className="absolute inset-0 hidden sm:block pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 right-20 text-green-400 text-2xl font-bold">×</div>
-        <div className="absolute top-40 left-20 w-0 h-0 border-l-4 border-r-4 border-b-6 border-transparent border-b-green-400"></div>
+        <div className="absolute top-40 left-20 w-0 h-0 border-l-4 border-r-4 border-b-[6px] border-transparent border-b-green-400"></div>
         <div className="absolute bottom-32 right-32 w-4 h-4 bg-green-400 rounded-full"></div>
         <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400 rounded-full"></div>
         <div className="absolute top-60 left-80 w-2 h-2 bg-purple-400 rounded-full"></div>

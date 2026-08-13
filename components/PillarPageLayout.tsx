@@ -64,7 +64,7 @@ export default function PillarPageLayout({
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none hidden sm:block">
+        <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
           <div className="absolute top-20 right-20 w-6 h-6 border-2 border-green-400 rotate-45"></div>
           <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full opacity-80"></div>
         </div>
@@ -226,7 +226,7 @@ export default function PillarPageLayout({
               </div>
               <div className="flex items-center text-sm font-semibold text-gray-900 pt-2 group-hover:text-green-700 transition-colors">
                 Read case study
-                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-1 motion-safe:group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           </Link>
