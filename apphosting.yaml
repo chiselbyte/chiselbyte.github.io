@@ -1,16 +1,20 @@
 # Firebase App Hosting environment configuration.
 #
-# Secrets must first be created in Firebase Secret Manager:
-#   firebase apphosting:secrets:set WEB3FORMS_ACCESS_KEY
+# Secrets must first be created in Firebase Secret Manager before referencing
+# them here, e.g.:
+#   firebase apphosting:secrets:set NEXT_PUBLIC_PLAUSIBLE_DOMAIN
 #
-# Then uncomment the relevant entries below to expose them to the build/runtime.
+# Uncomment the relevant entries below to expose them to the build/runtime.
+# Every variable is optional — the site builds and runs without any of them.
 
 env:
   # ---- Contact form (Web3Forms) ----
-  # The access key is already hard-coded as a fallback in the API route, so this is only
-  # needed if you rotate the key. Web3Forms access keys are designed to be public.
-  # - variable: WEB3FORMS_ACCESS_KEY
-  #   secret: WEB3FORMS_ACCESS_KEY
+  # The form posts directly from the browser to Web3Forms; no backend route.
+  # An access key is already hard-coded in app/contact/page.tsx, so this is
+  # only needed if you rotate the key. Web3Forms access keys are public by
+  # design — they identify the account, not authenticate it.
+  # - variable: NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+  #   value: <new-access-key>
 
   # ---- Site URL (used by metadata, sitemap, robots) ----
   # - variable: NEXT_PUBLIC_SITE_URL
@@ -21,6 +25,7 @@ env:
   # - variable: NEXT_PUBLIC_PLAUSIBLE_DOMAIN
   #   value: chiselbyte.com
   #
-  # Optional. Override the Plausible script URL (e.g. for self-hosted Plausible or Umami).
+  # Optional. Override the Plausible script URL (e.g. for self-hosted Plausible
+  # or Umami).
   # - variable: NEXT_PUBLIC_PLAUSIBLE_SRC
   #   value: https://plausible.io/js/script.js
