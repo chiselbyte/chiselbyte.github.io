@@ -11,6 +11,11 @@ export const metadata: Metadata = {
       'Anonymized, technical, defensible. The architecture and decisions behind the systems we ship.',
     url: '/work',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Selected work | Chiselbyte',
+    description: 'Anonymized, technical, defensible. The architecture and decisions behind the systems we ship.',
+  },
 };
 
 export default function WorkLayout({ children }: { children: React.ReactNode }) {

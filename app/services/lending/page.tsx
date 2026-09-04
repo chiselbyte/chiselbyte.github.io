@@ -2,6 +2,7 @@ import PillarPageLayout from "@/components/PillarPageLayout";
 import LendingArchDiagram from "@/components/diagrams/LendingArchDiagram";
 
 import type { Metadata } from "next";
+import { serviceSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Lending & Fintech Software",
@@ -14,11 +15,24 @@ export const metadata: Metadata = {
       "Onboarding, KYC, credit decisioning, multi-bureau credit dashboards (CIBIL / CRIF / Equifax). Pragmatic stack, shipped fast.",
     url: "/services/lending",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Lending & Fintech Software | Chiselbyte",
+    description: "Onboarding, KYC, credit decisioning, multi-bureau credit dashboards (CIBIL / CRIF / Equifax). Pragmatic stack, shipped fast.",
+  },
 };
+
+const SERVICE_SCHEMA = serviceSchema({
+  serviceType: "Lending and fintech software development",
+  description:
+    "Custom lending software: onboarding, KYC routing, credit decisioning, multi-bureau credit dashboards (CIBIL / CRIF / Equifax), and disbursement tracking.",
+  path: "/services/lending",
+});
 
 export default function LendingServicePage() {
   return (
     <PillarPageLayout
+      jsonLd={SERVICE_SCHEMA}
       eyebrow="Lending & Fintech"
       title="Lending software built in weeks. Not quarters."
       intro="Onboarding, KYC routing, credit decisioning, disbursement tracking, and bureau report rendering — designed pragmatically, shipped fast."

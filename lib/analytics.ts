@@ -16,6 +16,8 @@ export type AnalyticsEvent =
   | "cta_all_writing"
   | "cta_more_writing"
   | "cta_more_on_pillar"
+  | "cta_book_fit_call"
+  | "cta_see_pricing"
   | "contact_form_submit"
   | "contact_form_success"
   | "contact_form_error"

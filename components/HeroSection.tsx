@@ -46,14 +46,14 @@ export default function HeroSection() {
                 <Link
                   href="#work"
                   onClick={() => trackEvent("cta_see_our_work", { location: "hero" })}
-                  className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                  className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200"
                 >
                   See our work
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => trackEvent("cta_start_project", { location: "hero" })}
-                  className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 py-3 text-base font-semibold rounded-lg transition-all duration-200"
+                  className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 text-base font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   Start a project
                 </Link>

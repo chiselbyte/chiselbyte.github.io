@@ -34,7 +34,7 @@ const principles: Principle[] = [
     number: "04",
     title: "No retainers without a scoped win first.",
     body:
-      "Every relationship starts with a 1-2 week shipped deliverable. If we can't show value in two weeks, a 12-month retainer won't fix it. After that, monthly support is a yes.",
+      "Every relationship starts with a paid scoping sprint, then a fixed-price deliverable you can judge on its own. If we can't show value in two weeks, a 12-month retainer won't fix it. After that, monthly support is a yes.",
   },
 ];
 

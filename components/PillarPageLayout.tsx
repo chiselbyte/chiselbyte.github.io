@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import JsonLd from "@/components/JsonLd";
+import { PRICING_HREF } from "@/lib/pricing";
 
 interface ExtraSection {
   title: string;
@@ -39,6 +41,8 @@ interface PillarPageLayoutProps {
   extraSections?: ExtraSection[];
   featuredCaseStudy?: FeaturedCaseStudy;
   techStack: string[];
+  /** schema.org Service node for this pillar, rendered into the page. */
+  jsonLd?: Record<string, unknown>;
   opinion: {
     quote: string;
     href?: string;
@@ -58,10 +62,12 @@ export default function PillarPageLayout({
   extraSections,
   featuredCaseStudy,
   techStack,
+  jsonLd,
   opinion,
 }: PillarPageLayoutProps) {
   return (
     <main className="min-h-screen bg-white">
+      {jsonLd ? <JsonLd data={jsonLd} /> : null}
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
@@ -284,6 +290,16 @@ export default function PillarPageLayout({
           >
             Start a project
           </Link>
+          <p className="text-xs sm:text-sm text-gray-500 mt-4">
+            Fixed price, quoted after a paid scoping sprint.{" "}
+            <Link
+              href={PRICING_HREF}
+              onClick={() => trackEvent("cta_see_pricing", { location: "pillar_page", pillar: eyebrow })}
+              className="text-green-700 font-medium underline"
+            >
+              What this costs
+            </Link>
+          </p>
         </div>
       </section>
     </main>

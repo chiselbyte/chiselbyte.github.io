@@ -2,6 +2,7 @@ import PillarPageLayout from "@/components/PillarPageLayout";
 import WhatsAppArchDiagram from "@/components/diagrams/WhatsAppArchDiagram";
 
 import type { Metadata } from "next";
+import { serviceSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "WhatsApp Business API & Portal",
@@ -14,11 +15,24 @@ export const metadata: Metadata = {
       "Multi-tenant WABA portals via Meta Embedded Signup — from app review to template approval. Without BSP markup.",
     url: "/services/whatsapp",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "WhatsApp Business API & Portal | Chiselbyte",
+    description: "Multi-tenant WABA portals via Meta Embedded Signup — from app review to template approval. Without BSP markup.",
+  },
 };
+
+const SERVICE_SCHEMA = serviceSchema({
+  serviceType: "WhatsApp Business API integration and portal development",
+  description:
+    "Multi-tenant WhatsApp Business API portals via Meta Embedded Signup, including template lifecycle, broadcast infrastructure, and Meta app review.",
+  path: "/services/whatsapp",
+});
 
 export default function WhatsAppServicePage() {
   return (
     <PillarPageLayout
+      jsonLd={SERVICE_SCHEMA}
       eyebrow="WhatsApp Business API"
       title="Multi-tenant WhatsApp portals — without BSP markup."
       intro="We build multi-tenant WhatsApp Business API portals end-to-end: Embedded Signup, template lifecycle, broadcast infrastructure, and the Meta app review process."

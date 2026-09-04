@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
+import { PRICING_HREF } from "@/lib/pricing";
 import { trackEvent } from "@/lib/analytics";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const WEB3FORMS_ACCESS_KEY =
   process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
-  "6cec701e-93b3-4355-ba10-f0dc0d66ea83";
+  "ae3443be-c087-438d-85a5-c2f247a640de";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -20,8 +22,12 @@ const NEXT_STEPS = [
     body: "Either with questions, or with a straight answer that we're not the right fit.",
   },
   {
-    title: "We scope the smallest thing that ships",
-    body: "A milestone you can judge on its own, not a six-month statement of work.",
+    title: "Thirty minutes, free",
+    body: "A call with the person who would build it. No deck, no written report. If it isn't worth building, we say so and that's the end of it.",
+  },
+  {
+    title: "Then a paid scoping sprint",
+    body: "Three to five days. You get a requirements doc, a schema, a working thin slice, and a fixed price for the build. The fee comes off the build if you go ahead.",
   },
 ];
 
@@ -101,6 +107,10 @@ export default function ContactPage() {
               <a href="mailto:info@chiselbyte.com" className="text-green-700 font-medium underline">
                 info@chiselbyte.com
               </a>
+              . Our rates are published —{" "}
+              <Link href={PRICING_HREF} className="text-green-700 font-medium underline">
+                what this costs
+              </Link>
               .
             </p>
             <form

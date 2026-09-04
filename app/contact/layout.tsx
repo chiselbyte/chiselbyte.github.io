@@ -11,6 +11,11 @@ export const metadata: Metadata = {
       'Have a scoped problem? Let us pick the smallest thing that ships.',
     url: '/contact',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Chiselbyte',
+    description: 'Have a scoped problem? Let us pick the smallest thing that ships.',
+  },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

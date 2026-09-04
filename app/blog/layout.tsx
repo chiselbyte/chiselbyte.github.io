@@ -11,6 +11,11 @@ export const metadata: Metadata = {
       'Opinions we will defend, by the Chiselbyte team.',
     url: '/blog',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Writing | Chiselbyte',
+    description: 'Opinions we will defend, by the Chiselbyte team.',
+  },
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

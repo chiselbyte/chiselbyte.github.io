@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRICING_HREF } from "@/lib/pricing";
 import { ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
@@ -44,7 +45,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start space-x-3">
                 <span className="text-green-700 mt-1 flex-shrink-0">→</span>
-                <span><strong className="text-gray-900">Ship the scoped win first.</strong> Every relationship starts with a 1-2 week deliverable. After that, monthly support is a yes.</span>
+                <span><strong className="text-gray-900">Ship the scoped win first.</strong> A paid scoping sprint, then a fixed-price deliverable in one to two weeks. Monthly support after that, not before.</span>
               </li>
             </ul>
             <div className="mt-6">
@@ -62,13 +63,17 @@ export default function AboutPage() {
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">How we work</h2>
             <div className="text-gray-700 leading-relaxed space-y-4 text-sm sm:text-base">
               <p>
-                We start every engagement by scoping the smallest piece of work that demonstrably moves your business. Typically 1-2 weeks. We ship it, you see whether we deliver, and only then do we discuss longer-term retainers.
+                We start every engagement with a paid scoping sprint — three to five days that produce a requirements document, a schema, a working thin slice of the real system, and a fixed price for the build. The fee comes off the build if you proceed. Then we ship the smallest piece of work that demonstrably moves your business, usually in one to two weeks, at the price we quoted. Only after that do we discuss retainers.
               </p>
               <p>
                 For automations and AI workflows, we usually move onto a monthly retainer covering hosting, monitoring, and incremental additions. For larger custom software builds, we work in 2-week milestones with continuous delivery to a staging environment.
               </p>
               <p>
-                What we don't do: discovery decks, 12-week kickoff phases, or proposals padded with services we don't operate.
+                What we don't do: discovery decks, 12-week kickoff phases, or proposals padded with services we don't operate. Our numbers are published:{" "}
+                <Link href={PRICING_HREF} className="text-green-700 font-medium underline">
+                  what this costs
+                </Link>
+                .
               </p>
             </div>
           </section>

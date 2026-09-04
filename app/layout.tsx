@@ -4,6 +4,8 @@ import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { organizationSchema, websiteSchema } from '@/lib/structured-data';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -93,6 +95,11 @@ export default function RootLayout({
             {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
           </Script>
         ) : null}
+        {/* Site-wide entity graph. Every other schema node on the site
+            references this Organization by @id, so search engines resolve
+            one "Chiselbyte" rather than one per page. */}
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
       </head>
       <body className={inter.className}>
         {/*

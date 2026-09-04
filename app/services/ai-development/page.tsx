@@ -2,6 +2,7 @@ import PillarPageLayout from "@/components/PillarPageLayout";
 import AIArchDiagram from "@/components/diagrams/AIArchDiagram";
 
 import type { Metadata } from "next";
+import { serviceSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "AI Development",
@@ -14,11 +15,24 @@ export const metadata: Metadata = {
       "Production LLM systems. Not chatbots. Schema-validated outputs with Pydantic, Anthropic Claude API, MCP, FastAPI, and n8n.",
     url: "/services/ai-development",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "AI Development | Chiselbyte",
+    description: "Production LLM systems. Not chatbots. Schema-validated outputs with Pydantic, Anthropic Claude API, MCP, FastAPI, and n8n.",
+  },
 };
+
+const SERVICE_SCHEMA = serviceSchema({
+  serviceType: "Production LLM system development",
+  description:
+    "Production LLM systems for classification, extraction, and decision support — schema-validated outputs, observable pipelines, and real cost controls.",
+  path: "/services/ai-development",
+});
 
 export default function AIServicePage() {
   return (
     <PillarPageLayout
+      jsonLd={SERVICE_SCHEMA}
       eyebrow="AI Development"
       title="Production LLM systems. Not chatbots."
       intro="We build LLM-powered software that goes into production and stays there — structured outputs, validated schemas, observable pipelines, real cost controls."

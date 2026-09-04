@@ -19,6 +19,11 @@ export const metadata: Metadata = {
       'A small senior team building production LLM systems, custom lending software, multi-tenant WhatsApp Business API portals, and n8n process automations.',
     url: '/',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chiselbyte — Production LLM systems. Not chatbots.',
+    description: 'A small senior team building production LLM systems, custom lending software, multi-tenant WhatsApp Business API portals, and n8n process automations.',
+  },
 };
 
 export default function Home() {

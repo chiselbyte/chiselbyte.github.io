@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { trackEvent } from '@/lib/analytics';
+import { PRICING_HREF } from '@/lib/pricing';
 
 export default function ReadyToTalkSection() {
   return (
@@ -37,11 +38,11 @@ export default function ReadyToTalkSection() {
                 Start a project
               </Link>
               <Link
-                href="/how-we-build"
-                onClick={() => trackEvent("cta_see_how_we_work", { location: "ready_to_talk" })}
+                href={PRICING_HREF}
+                onClick={() => trackEvent("cta_see_pricing", { location: "ready_to_talk" })}
                 className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300"
               >
-                See how we work
+                See what this costs
               </Link>
             </div>
           </div>

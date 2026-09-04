@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRICING_HREF } from "@/lib/pricing";
 import { ArrowRight } from "lucide-react";
 
 /**
@@ -24,10 +25,10 @@ const proofPoints = [
     cta: "See the pipeline",
   },
   {
-    label: "How we actually build",
-    body: "Scoped milestones, observable systems, and the smallest thing that ships first.",
-    href: "/how-we-build",
-    cta: "See the process",
+    label: "Published prices",
+    body: "A paid scoping sprint, a fixed-price build, then a monthly retainer. The numbers are on the site.",
+    href: PRICING_HREF,
+    cta: "See what this costs",
   },
   {
     label: "One business day",

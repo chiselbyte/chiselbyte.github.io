@@ -2,17 +2,26 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import PricingSection from "@/components/PricingSection";
+import { engagementOfferCatalogSchema } from "@/lib/structured-data";
+import { PRICING_HASH, SPRINT_MIN, usd } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "How We Build",
   description:
-    "Four opinions about software we don't apologize for. Our manifesto on the smallest stack, schemas, n8n vs admin panels, and scoped wins before retainers.",
+    "Four opinions about software we don't apologize for — and what we charge. A paid scoping sprint, fixed-price builds, and monthly support only after something ships.",
   alternates: { canonical: "/how-we-build" },
   openGraph: {
     title: "How We Build | Chiselbyte",
     description:
       "Four opinions we don't apologize for. The smallest stack. Schemas over vibes. n8n over admin panels. Scoped wins before retainers.",
     url: "/how-we-build",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "How We Build | Chiselbyte",
+    description: "Four opinions we don't apologize for. The smallest stack. Schemas over vibes. n8n over admin panels. Scoped wins before retainers.",
   },
 };
 
@@ -70,16 +79,22 @@ const principles: Principle[] = [
     number: "04",
     title: "No retainers without a scoped win first.",
     paragraphs: [
-      "Every relationship we have starts with a 1-2 week shipped deliverable. We scope it tightly, ship it, and then both sides decide whether to continue. We don't pitch six-month engagements to people who haven't seen us ship anything yet — and we don't sign clients who aren't comfortable evaluating us on output rather than slides.",
+      "Every relationship we have starts with a scoped, shipped deliverable — usually one to two weeks of work, at a fixed price agreed before we start. We don't pitch six-month engagements to people who haven't seen us ship anything yet, and we don't sign clients who aren't comfortable evaluating us on output rather than slides.",
+      `Before that there's a paid scoping sprint: three to five days in which we write the requirements, design the schema, and build a thin slice of the real system against your data. It starts at ${usd(SPRINT_MIN)} and it comes off the build in full if you proceed. We charge for it because free scoping gets done badly — quickly, by someone junior, to win the work.`,
       "If we can't show value in two weeks, a twelve-month retainer won't fix it. After that initial deliverable, monthly support for hosting, monitoring, and incremental additions is a yes.",
       "This is partly self-protection: the work we want is the work we'd want to maintain, and you can only assess that by doing the first piece. It's also a filter on which clients we're a good fit for. The clients who say \"prove yourself first\" tend to be the clients we do our best work with.",
     ],
+    inAction: {
+      label: "What this costs: sprint, build, retainer",
+      href: `#${PRICING_HASH}`,
+    },
   },
 ];
 
 export default function HowWeBuildPage() {
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={engagementOfferCatalogSchema} />
       {/* Hero */}
       <section className="relative bg-gray-900 text-white py-12 sm:py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
@@ -142,6 +157,8 @@ export default function HowWeBuildPage() {
           ))}
         </div>
       </section>
+
+      <PricingSection />
 
       {/* CTA */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">

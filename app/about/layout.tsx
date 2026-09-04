@@ -11,6 +11,11 @@ export const metadata: Metadata = {
       'A small senior team. Pune, India. Boring software, on purpose.',
     url: '/about',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Chiselbyte',
+    description: 'A small senior team. Pune, India. Boring software, on purpose.',
+  },
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

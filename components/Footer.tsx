@@ -5,6 +5,7 @@ import {
   Mail,
 } from 'lucide-react';
 import Link from 'next/link';
+import { PRICING_HREF } from '@/lib/pricing';
 
 interface FooterGroup {
   heading: string;
@@ -27,6 +28,7 @@ const footerGroups: FooterGroup[] = [
       { name: "Work", href: "/work" },
       { name: "Writing", href: "/blog" },
       { name: "How We Build", href: "/how-we-build" },
+      { name: "Pricing", href: PRICING_HREF },
       { name: "About", href: "/about" },
       { name: "Contact", href: "/contact" },
     ],

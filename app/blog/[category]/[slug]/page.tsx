@@ -5,6 +5,8 @@ import Link from "next/link";
 import { marked } from "marked";
 import { ArrowLeft } from "lucide-react";
 import blogData from "@/data/blog.json";
+import JsonLd from "@/components/JsonLd";
+import { blogPostingSchema } from "@/lib/structured-data";
 
 export async function generateStaticParams() {
   const params: { category: string; slug: string }[] = [];
@@ -75,8 +77,17 @@ export default function BlogPostPage({ params }: { params: { category: string; s
   }
   const html = marked.parse(markdown);
 
+  const articleSchema = blogPostingSchema({
+    headline: post.title,
+    description: post.description ?? "",
+    path: `/blog/${category.slug}/${post.slug}`,
+    datePublished: post.date,
+    keywords: post.tags ?? [],
+  });
+
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={articleSchema} />
       {/* Header */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden="true">
